@@ -57,6 +57,7 @@ task "db:populate" do
     price: 55,
     img_filepath: '/public/img/vans.jpg'
   )
+
 end
 
 desc 'Retrieves the current schema version number'
