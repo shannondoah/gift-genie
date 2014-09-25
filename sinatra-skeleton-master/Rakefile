@@ -21,17 +21,17 @@ desc "populate the database with sample user data"
 task "db:populate" do
   UserImporter.new.import
 
-  technology = Category.create(name: "Technology", picture: "/cat_img/technology.png")
+  technology = Category.create(name: "Technology", img_filepath: "/cat_img/technology.png")
 
-  sports = Category.create(name: "Sports", picture: "/cat_img/sports.png")
+  sports = Category.create(name: "Sports", img_filepath: "/cat_img/sports.png")
 
-  fashion = Category.create(name: "Fashion", picture: "/cat_img/fashion.png")
+  fashion = Category.create(name: "Fashion", img_filepath: "/cat_img/fashion.png")
 
-  home  = Category.create(name: "Home", picture: "/cat_img/home.png")
+  home  = Category.create(name: "Home", img_filepath: "/cat_img/home.png")
 
-  pets = Category.create(name: "Pets", picture: "/cat_img/pets.png")
+  pets = Category.create(name: "Pets", img_filepath: "/cat_img/pets.png")
 
-  entertainment = Category.create(name: "Entertainment", picture: "/cat_img/entertainment.png")
+  entertainment = Category.create(name: "Entertainment", img_filepath: "/cat_img/entertainment.png")
 
 
   lava_lamp = Product.create(name: "Electroplasma Lava Lamp", description: "This sweet lava lamp will give your giftee the ultimate in chill times.", price: 30, img_filepath: "/img/lava_lamp.jpg")
