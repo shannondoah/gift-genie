@@ -1,5 +1,6 @@
 require 'rake'
 require "sinatra/activerecord/rake"
+require_relative 'lib/user_importer'
 require ::File.expand_path('../config/environment', __FILE__)
 
 Rake::Task["db:create"].clear
@@ -16,13 +17,10 @@ task "db:drop" do
   rm_f 'db/db.sqlite3'
 end
 
-desc 'Retrieves the current schema version number'
-task "db:version" do
-  puts "Current version: #{ActiveRecord::Migrator.current_version}"
-end
-
-desc "populate the test database with sample data"
+desc "populate the database with sample user data"
 task "db:populate" do
+  UserImporter.new.import
+
   Product.create(
     name: 'iPhone 6', 
     description: 'New release from Apple.',
@@ -60,3 +58,9 @@ task "db:populate" do
     img_filepath: '/public/img/vans.jpg'
   )
 end
+
+desc 'Retrieves the current schema version number'
+task "db:version" do
+  puts "Current version: #{ActiveRecord::Migrator.current_version}"
+end
+
