@@ -21,42 +21,85 @@ desc "populate the database with sample user data"
 task "db:populate" do
   UserImporter.new.import
 
-  Product.create(
+  technology = Category.create(name: "Technology", picture: "/cat_img/technology.png")
+
+  sports = Category.create(name: "Sports", picture: "/cat_img/sports.png")
+
+  fashion = Category.create(name: "Fashion", picture: "/cat_img/fashion.png")
+
+  home  = Category.create(name: "Home", picture: "/cat_img/home.png")
+
+  pets = Category.create(name: "Pets", picture: "/cat_img/pets.png")
+
+  entertainment = Category.create(name: "Entertainment", picture: "/cat_img/entertainment.png")
+
+
+  lava_lamp = Product.create(name: "Electroplasma Lava Lamp", description: "This sweet lava lamp will give your giftee the ultimate in chill times.", price: 30, img_filepath: "/img/lava_lamp.jpg")
+
+  lava_lamp.categories << home
+
+  art = Product.create(name: "Sweet Art", description: "This painting is perfect gift for someone who understands the meaning of being deep and artsy.", price: 80, img_filepath: "/img/art.jpg")
+
+  art.categories << home
+
+  cat_necklace = Product.create(name: "Cat Necklace", description: "Take Precious with you, even when you have to leave her at home.", price: 20, img_filepath: "/img/cat_necklace.jpg")
+
+  cat_necklace.categories << pets
+
+  pet_tags = Product.create(name: "Pet Tags", description: "Give Scruffy a little piece of flair with this elegant copper tag.", price: 15, img_filepath: "/img/pet_tags.jpg")
+
+  pet_tags.categories << pets
+
+  food = Product.create(name: "The Hub", description: "A meal at the Hub is really all anyone wants.", price: 50, img_filepath: "/img/food.jpg")
+
+  food.categories << entertainment
+
+  theater = Product.create(name: "The Chauncey Theater", description: "An evening of theater will give the recipient a magical escape from the autumn doldrums.", price: 50, img_filepath: "/img/theatre.jpg")
+
+  theater.categories << entertainment
+
+  iphone = Product.create(
     name: 'iPhone 6', 
     description: 'New release from Apple.',
     price: 700,
     img_filepath: '/public/img/iphone6.jpg'
   )
-  Product.create(
+  iphone.categories << technology
+  galaxy = Product.create(
     name: 'Samsung Galaxy S5', 
     description: 'Samsung top smartphone',
     price: 680,
     img_filepath: '/public/img/galaxys5.jpg'
   )
-  Product.create(
+  galaxy.categories << technology
+  jersey = Product.create(
     name: 'Brazil Jersey', 
     description: 'Brazil national team jersey.',
     price: 70,
     img_filepath: '/public/img/brazil.jpg'
   )
-  Product.create(
+  jersey.categories << sports
+  skateboard = Product.create(
     name: 'Carver Skateboard', 
     description: 'Surf your Skateboard',
     price: 300,
     img_filepath: '/public/img/carver.jpg'
   )
-  Product.create(
+  skateboard.categories << sports
+  jeans = Product.create(
     name: 'Diesel Jeans', 
     description: 'Perfect fit.',
     price: 150,
     img_filepath: '/public/img/diesel.jpg'
   )
-  Product.create(
+  jeans.categories << fashion
+  shoes = Product.create(
     name: 'Vans shoes', 
     description: 'Confortable shoes',
     price: 55,
     img_filepath: '/public/img/vans.jpg'
   )
+  shoes.categories << fashion
 
 end
 
