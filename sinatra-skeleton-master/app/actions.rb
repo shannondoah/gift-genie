@@ -21,10 +21,10 @@ end
 
 #Shows the list of products.
 get '/products' do
-
+  @products = Product.all
   erb :'products/index' 
-
 end
+
 
 #Shows a form to create a new product.
 get '/products/new' do 

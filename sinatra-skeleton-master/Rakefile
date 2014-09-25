@@ -46,7 +46,7 @@ task "db:populate" do
 
   cat_necklace.categories << pets
 
-  pet_tags = Product.create(name: "Pet Tags", description: "Give Scruffy a little piece of flair with this elegant copper tag.", price: 15, img_filepath: "/img/pet_tags.jpg")
+  pet_tags = Product.create(name: "Pet Tags", description: "Give Scruffy a little piece of flair with this elegant copper tag.", price: 15, img_filepath: "/img/dog_tags.jpg")
 
   pet_tags.categories << pets
 
@@ -62,42 +62,42 @@ task "db:populate" do
     name: 'iPhone 6', 
     description: 'New release from Apple.',
     price: 700,
-    img_filepath: '/public/img/iphone6.jpg'
+    img_filepath: "/img/iphone6.jpg"
   )
   iphone.categories << technology
   galaxy = Product.create(
     name: 'Samsung Galaxy S5', 
     description: 'Samsung top smartphone',
     price: 680,
-    img_filepath: '/public/img/galaxys5.jpg'
+    img_filepath: "/img/galaxys5.jpg"
   )
   galaxy.categories << technology
   jersey = Product.create(
     name: 'Brazil Jersey', 
     description: 'Brazil national team jersey.',
     price: 70,
-    img_filepath: '/public/img/brazil.jpg'
+    img_filepath: "/img/brazil.jpg"
   )
   jersey.categories << sports
   skateboard = Product.create(
     name: 'Carver Skateboard', 
     description: 'Surf your Skateboard',
     price: 300,
-    img_filepath: '/public/img/carver.jpg'
+    img_filepath: "/img/carver.jpg"
   )
   skateboard.categories << sports
   jeans = Product.create(
     name: 'Diesel Jeans', 
     description: 'Perfect fit.',
     price: 150,
-    img_filepath: '/public/img/diesel.jpg'
+    img_filepath: "/img/diesel.jpg"
   )
   jeans.categories << fashion
   shoes = Product.create(
     name: 'Vans shoes', 
     description: 'Confortable shoes',
     price: 55,
-    img_filepath: '/public/img/vans.jpg'
+    img_filepath: "/img/vans.jpg"
   )
   shoes.categories << fashion
 
