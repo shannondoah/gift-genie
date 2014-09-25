@@ -6,7 +6,8 @@
 #GET ACTIONS
 # Homepage (Root path)
 get '/' do
-
+  @users = User.all
+  @products = Product.all
   erb :index
 
 end
