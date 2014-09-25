@@ -1,7 +1,7 @@
 # Helper methods
-helper do
+# helper do
 
-end
+# end
 
 #GET ACTIONS
 # Homepage (Root path)
@@ -40,7 +40,7 @@ get 'users/new' do
 end
 
 #Form to edit user profile.
-get 'user/:id/edit' do 
+get 'users/:id/edit' do 
 
   erb :'users/edit'
 
