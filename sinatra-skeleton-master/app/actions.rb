@@ -41,7 +41,7 @@ get 'users/new' do
 end
 
 #Form to edit user profile.
-get 'users/:id/edit' do 
+get '/users/:id/edit' do 
 
   erb :'users/edit'
 
