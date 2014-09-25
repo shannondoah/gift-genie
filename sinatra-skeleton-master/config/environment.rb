@@ -23,6 +23,21 @@ configure do
   set :views, File.join(Sinatra::Application.root, "app", "views")
 end
 
+# configure :production do
+#  db = URI.parse(ENV['DATABASE_URL'] || 'postgres:///localhost/mydb')
+
+#  ActiveRecord::Base.establish_connection(
+#    :adapter  'postgresql',
+#    :host     => db.host,
+#    :username => db.user,
+#    :password => db.password,
+#    :database => db.path[1..-1],
+#    :encoding => 'unicode'
+    # :pool  ,
+    # :port  
+#  )
+# end
+
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
 
