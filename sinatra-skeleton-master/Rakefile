@@ -20,3 +20,43 @@ desc 'Retrieves the current schema version number'
 task "db:version" do
   puts "Current version: #{ActiveRecord::Migrator.current_version}"
 end
+
+desc "populate the test database with sample data"
+task "db:populate" do
+  Product.create(
+    name: 'iPhone 6', 
+    description: 'New release from Apple.',
+    price: 700,
+    img_filepath: '/public/img/iphone6.jpg'
+  )
+  Product.create(
+    name: 'Samsung Galaxy S5', 
+    description: 'Samsung top smartphone',
+    price: 680,
+    img_filepath: '/public/img/galaxys5.jpg'
+  )
+  Product.create(
+    name: 'Brazil Jersey', 
+    description: 'Brazil national team jersey.',
+    price: 70,
+    img_filepath: '/public/img/brazil.jpg'
+  )
+  Product.create(
+    name: 'Carver Skateboard', 
+    description: 'Surf your Skateboard',
+    price: 300,
+    img_filepath: '/public/img/carver.jpg'
+  )
+  Product.create(
+    name: 'Diesel Jeans', 
+    description: 'Perfect fit.',
+    price: 150,
+    img_filepath: '/public/img/diesel.jpg'
+  )
+  Product.create(
+    name: 'Vans shoes', 
+    description: 'Confortable shoes',
+    price: 55,
+    img_filepath: '/public/img/vans.jpg'
+  )
+end
