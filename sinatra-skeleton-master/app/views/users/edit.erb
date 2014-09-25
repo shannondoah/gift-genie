@@ -1,1 +1,73 @@
-<h1> Edit user profile</h1>
+<% @user = User.find(3) %>
+
+<h1> Edit user profile </h1>
+
+<div class="cover_photo">
+  <img src=>
+    <div class="avatar">
+      <img src="/user_img/female1.jpg"/>
+    </div>
+</div>
+
+<div class="user_info">
+  <h2> Personal Information </h2>
+  <form method="put" action="">
+  <div>
+    <label>Name:</label> 
+    <input type="text" name="name" value="<%= @user.name %>">
+  </div>
+  <div>
+    <label>E-mail:</label>
+    <input type="text" name="email" value="<%= @user.email %>">
+  </div>
+  <!-- <div>
+    <label>Gender:</label></br>
+    <input type="radio" name="male" value="<%= @user.male %>">Male</br>
+    <input type="radio" name="female" value="<%= @user.female %>">Female
+  </div> -->
+  <div>
+    <label>Date of birth:</label>
+    <input type="text" name="birthdate" value="<%= @user.birthdate %>">
+  </div>
+  <div>
+    <input type="submit" value="Update Personal Details">
+  </div>
+</form>
+</div>
+
+<!-- MANIPULATING IMAGES IN DATABASE SHOULD COME LATER
+
+<div class="user_images">
+  <h2> Photos </h2>
+  <form method="put" action="">
+    <div>
+      <img src="<%= @user.avatar %>"/>
+      <label>Name:</label> 
+      <input type="text" name="name" value="<%= @user.name %>">
+    </div>
+    </div>
+    <div>
+      <input type="submit" value="Update Photo">
+    </div>
+  </form>
+</div> 
+
+-->
+
+<div class="product_info">
+  <h2> Edit Products </h2>
+  <% @user.favourites.each do |fave|%>
+    <% product = Product.find(fave.product_id) %>
+      <img src="<%= product.img_filepath%>"/>
+      <p><%= product.name %></p>
+  <% end %> 
+
+  <form method="post" action="removeproduct">
+    <input type="submit" value="Delete Product">
+  </div>
+</form>
+</div>
+
+<form class="new_product" method="get" action="products/new">
+<input type="submit" value="Add your own!">
+</form>
