@@ -27,11 +27,9 @@
 Hello <%= @user.email %> : <a href="/logout">Logout</a>
 </p>
 <% end %>
-<form method="post" action="/search">
-  
-  <input type="text" name="search" value="<%= %>">
-  <input type="submit" value="Search" >
-  
+<form method="get" action="/products">
+    <input type="text" name="category" >
+    <input type="submit" value="Search">
 </form>
 
 
