@@ -1,11 +1,23 @@
-<h1>Products</h1>
+<a href="/products"><h1>Products</h1></a>
 
-<% @products.each do |product| %>
-	<div class="product-container">
-		<img src="<%= product.img_filepath%> " class="product-preview"/>
-		<p><h4><%= product.name %></h4></p>
-		<p>$<%= product.price %></p>
-		<p id="description"><%= product.description %></p>
-	</div>
+
+<form method="get" action="/products">
+  <div>
+    <label>Search Categories:</label>
+    <input type="text" name="category" >
+  </div>
+  <div>
+    <input type="submit" value="Submit">
+  </div>
+</form>
+
+<% if @products %>
+	<% @products.each do |product| %>
+		<div class="product-container">
+			<img src="<%= product.img_filepath%> " class="product-preview"/>
+			<p><h4><%= product.name %></h4></p>
+			<p>$<%= product.price %></p>
+			<p id="description"><%= product.description %></p>
+		</div>
+	<% end %>
 <% end %>
-
