@@ -1,27 +1,32 @@
 require 'pry'
 
 # Helper methods
-# helper do
+helpers do
+  def login_check
+    @logged_in = session[:user_id] ? true : false
+    if(@logged_in)
+      @user = User.find_by_id(session[:user_id])
+    else
+      @user = User.new
+    end
+    
+  end
 
-# end
+end
 enable :sessions
 
 #GET ACTIONS
 # Homepage (Root path)
 get '/' do
-  @logged_in = session[:user_id] ? true : false
-  if(@logged_in)
-    @user = User.find_by_id(session[:user_id])
-  else
-    @user = User.new
-  end
+  login_check
   @categories = Category.all
   @products = Product.all
   erb :index
 
 end
 #Shows a signup form to create a new user.
-get '/users/new' do 
+get '/users/new' do
+  login_check 
   @user = User.new
   erb :'users/new'
 
@@ -29,13 +34,14 @@ end
 
 #Shows user profile
 get '/users/:id' do 
-
+  login_check
   erb :'users/show'
 
 end
 
 #Shows the list of products
 get '/products' do
+  login_check
   if params[:category]
     @product = params[:category]
     @products = Category.find_by("name = ?", @product).products
