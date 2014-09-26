@@ -7,7 +7,12 @@ enable :sessions
 #GET ACTIONS
 # Homepage (Root path)
 get '/' do
-  @user = User.new
+  @logged_in = session[:user_id] ? true : false
+  if(@logged_in)
+    @user = User.find_by_id(session[:user_id])
+  else
+    @user = User.new
+  end
   @categories = Category.all
   @products = Product.all
   erb :index
@@ -61,7 +66,7 @@ post '/login' do
     ).first
   if @user 
     session[:user_id] = @user.id
-    redirect '/users/show' 
+    redirect "/users/#{@user.id}"
   else
     redirect '/'
   end
@@ -82,7 +87,7 @@ post '/users/new' do
     )
   if @user.save
     session[:user_id] = @user_id
-    redirect '/users/:id'
+    redirect "/users/#{@user_id}"
   else
     redirect '/users/new'
     
