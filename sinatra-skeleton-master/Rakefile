@@ -32,7 +32,7 @@ task "db:populate" do
 
   pets = Category.create(name: "Pets", img_filepath: "/cat_img/pets.png")
 
-  books = pets = Category.create(name: "books", img_filepath: "/cat_img/books.png")
+  books = Category.create(name: "books", img_filepath: "/cat_img/books.png")
 
   entertainment = Category.create(name: "Entertainment", img_filepath: "/cat_img/entertainment.png")
 
