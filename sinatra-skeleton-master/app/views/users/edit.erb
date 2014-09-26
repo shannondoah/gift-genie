@@ -1,5 +1,3 @@
-<% @user = User.find(3) %>
-
 <h1> Edit user profile </h1>
 
 <div class="cover_photo">
@@ -11,35 +9,35 @@
 
 <div class="user_info">
   <h2> Personal Information </h2>
-  <form method="put" action="/users/<%= @user.id%>/edit">
-  <div>
-    <label>Name:</label> 
-    <input type="text" name="name" value="<%= @user.name %>">
-  </div>
-  <div>
-    <label>E-mail:</label>
-    <input type="text" name="email" value="<%= @user.email %>">
-  </div>
-  <div>
-    <label>Date of birth:</label>
-    <input type="text" name="birthdate" value="<%= @user.birthdate %>">
-  </div>
-  <div>
-    <input type="submit" value="Update Personal Details">
-  </div>
-</form>
+    <form method="post" action="/users/<%= @user.id%>/edit">
+      <div>
+        <label>Name:</label> 
+        <input type="text" name="name" value="<%= @user.name %>">
+      </div>
+      <div>
+        <label>E-mail:</label>
+        <input type="text" name="email" value="<%= @user.email %>">
+      </div>
+      <div>
+        <label>Date of birth:</label>
+        <input type="text" name="birthdate" value="<%= @user.birthdate %>">
+      </div>
+      <div>
+        <input type="submit" value="Update Personal Details">
+      </div>
+  </form>
 </div>
 
 <div class="change_password">
   <h2> Change Password </h2>
-  <form method="put" action="/users/<%= @user.id%>/edit">
+  <form method="put" action="/users/<%= @user.id%>/changepassword">
   <div>
     <label>Enter your old password:</label> 
-    <input type="password" name="name" value="<% @user.password%>">
+    <input type="password" name="old_password" value="<% @user.password%>">
   </div>
   <div>
     <label>Enter your new password:</label> 
-    <input type="password" name="name" value="<% @user.password %>">
+    <input type="password" name="new_password" value="<% @user.password %>">
   </div>
   <input type="submit" value="Change Password">
   </form>

@@ -29,12 +29,13 @@ end
 
 #Shows user profile
 get '/users/:id' do 
-  @logged_in = session[:user_id] ? true : false
-  if(@logged_in)
-    @user = User.find_by_id(session[:user_id])
+  if session[:user_id] == params[:id]
+    @user = User.find(session[:user_id])
+    erb :'users/show'
+  else
+    @user = User.find(params[:id])
+    erb :'users/show_public'
   end
-  erb :'users/show'
-
 end
 
 #Shows the list of products
@@ -59,6 +60,7 @@ end
 
 #Form to edit user profile.
 get '/users/:id/edit' do 
+  @user = User.find(3)
   erb :'users/edit'
 end
 
@@ -105,15 +107,25 @@ post '/users/new' do
 
 end
 
-put 'users/:id/edit' do 
-  @user = User.find(3)
-  @user.update_attributes(
-    name: params[:name],
-    email: params[:email],
-    birthdate: params[:birthdate]
+put '/users/:id/changepassword' do
+  @user = User.where(
+    id: session[:user_id],
+    password: params[:old_password]
     )
+  if @user
+    @user.update_attributes(
+      password: params[:new_password]
+      )
+  end
+end
+
+post '/users/:id/edit' do 
+  @user = User.find(params[:id])
+  @user.name = params[:name]
+  @user.email = params[:email]
+  @user.birthdate = params[:birthdate]
   @user.save
-  erb :'users/:id/edit'
+  redirect to("/users/#{params[:id]}/edit")
 
 end
 

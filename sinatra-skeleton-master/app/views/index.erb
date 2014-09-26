@@ -21,7 +21,7 @@
 </div>
 <% else %>
 <p>
-<a href="/users/show">My profile</a>
+<a href="/users/<% @user.id %>">My profile</a>
 </p>
 <p>
 Hello <%= @user.email %> : <a href="/logout">Logout</a>
