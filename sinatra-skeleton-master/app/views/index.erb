@@ -1,8 +1,39 @@
-<h1>Gift Genie</h1>
-<% @products.each do |product|  %>
-<p><%= product.name %></p>
+<% if session[:user_id] %>
+<% redirect '/users/:id' %>
+<% else %>
+<h1><a href="/">Gift Genie</a></h1>
+
+<h2>Login</h2>
+<form method="post" action="/login">
+  <div>
+    <label>Email:</label>
+    <input type="text" name="email" value="<%= @user.email %>">
+  </div>
+  <div>
+    <label>Password:</label>
+    <input type="password" name="password" value="<%= @user.password %>">
+  </div>
+
+  <div>
+    <input type="submit" value="Login" >
+  </div>
+</form>
+<a href="/users/new">Don't have an account?Sign up here... It's FREE (for now)!</a>
+<p>
+<a href="/logout">Logout</a>
+</p>
+
+
+
+<% @categories.each do |category|  %>
+<img src="<%= category.img_filepath %>">
+<p><%= category.name %></p>
 <% end %>
 
-<% @users.each do |user|  %>
-<p><%= user.name %></p>
-<% end %>
+<form method="post" action="/search">
+  
+  <input type="text" name="search" value="<%= %>">
+  <input type="submit" value="Search" >
+  
+</form>
+<%end%>
