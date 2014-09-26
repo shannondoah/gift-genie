@@ -10,10 +10,10 @@
 
 <div class="filter_bar">
   <label>Filter By:</label>
-  <select>
-    <option value="<% :price %>">Price</option>
-    <option value="<% :created_at %>">Newest First</option>
-    <option value="<% :created_at %>">Oldest First</option>
+  <select onchange="console.log(this.options[this.selectedIndex].value); window.location = this.options[this.selectedIndex].value;">
+    <option value="?orderby=price">Price</option>
+    <option value="?orderby=price">Newest First</option>
+    <option value="oldest_first">Oldest First</option>
 </select>
 </div>
 

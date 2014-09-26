@@ -37,6 +37,18 @@ get '/users/:id' do
     erb :'users/show'
   else
     @user = User.find(params[:id])
+    
+    if params.include? 'orderby'
+      if params[:orderby] == 'price'
+        favourites = Favourite.joins(:product).order('CAST(products.price as decimal)').find_by(user_id: @user.id)
+      elsif params['orberby'] == 'date'
+        favourites = Favourite.find().where(:user_id == @user.id).orderby(:date)
+      else
+        # favourites = Favourite.order('created_at').find_by(user_id: @user.id)
+        # favourites = Favourite.joins(:product).order('created_at').find_by(user_id: @user.id)
+        favourites = Favourite.joins(:product).order('CAST(products.price as decimal)').find_by(user_id: @user.id)
+      end
+    end
     erb :'users/show_public'
   end
 end

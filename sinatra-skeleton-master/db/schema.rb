@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20140926192402) do
   create_table "categories", force: true do |t|
     t.string   "name"
     t.string   "img_filepath"
+    t.integer  "parent_category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
