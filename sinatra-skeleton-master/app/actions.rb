@@ -1,3 +1,5 @@
+require 'pry'
+
 # Helper methods
 # helper do
 
@@ -20,9 +22,27 @@ get '/users/:id' do
 end
 
 #Shows the list of products.
+# get '/products' do
+#   @products = Product.all
+#   erb :'products/index' 
+# end
+
+# post '/products' do
+#   @product = params[:category]
+#   @products = Category.find_by("name = ?", @product).products
+#   erb :'products/index' 
+# end
+
+#Shows the list of products
 get '/products' do
-  @products = Product.all
-  erb :'products/index' 
+  if params[:category]
+    @product = params[:category]
+    @products = Category.find_by("name = ?", @product).products
+    erb :'products/index' 
+  else
+    @products = Product.all
+    erb :'products/index' 
+  end
 end
 
 

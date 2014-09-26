@@ -95,7 +95,7 @@ task "db:populate" do
   jeans.categories << fashion
   shoes = Product.create(
     name: 'Vans shoes', 
-    description: 'Confortable shoes',
+    description: 'Comfortable shoes',
     price: 55,
     img_filepath: "/img/vans.jpg"
   )
