@@ -1,8 +1,42 @@
-<h1>Gift Genie</h1>
-<% @products.each do |product|  %>
-<p><%= product.name %></p>
+<h1><a href="/">Gift Genie</a></h1>
+
+<% if !@logged_in %>
+<h2>Login</h2>
+<form method="post" action="/login">
+  <div>
+    <label>Email:</label>
+    <input type="text" name="email" value="<%= @user.email %>">
+  </div>
+  <div>
+    <label>Password:</label>
+    <input type="password" name="password" value="<%= @user.password %>">
+  </div>
+
+  <div>
+    <input type="submit" value="Login" >
+  </div>
+</form>
+<div>
+<a href="/users/new">Don't have an account?Sign up here... It's FREE!</a>
+</div>
+<% else %>
+<p>
+<a href="/users/show">My profile</a>
+</p>
+<p>
+Hello <%= @user.email %> : <a href="/logout">Logout</a>
+</p>
+<% end %>
+<form method="post" action="/search">
+  
+  <input type="text" name="search" value="<%= %>">
+  <input type="submit" value="Search" >
+  
+</form>
+
+
+<% @categories.each do |category|  %>
+<img src="<%= category.img_filepath %>">
+<p><%= category.name %></p>
 <% end %>
 
-<% @users.each do |user|  %>
-<p><%= user.name %></p>
-<% end %>
