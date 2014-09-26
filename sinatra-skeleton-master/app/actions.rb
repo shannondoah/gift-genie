@@ -29,7 +29,7 @@ end
 
 #Shows user profile
 get '/users/:id' do 
-  if session[:user_id] == params[:id]
+  if params[:id] == session[:user_id]
     @user = User.find(session[:user_id])
     erb :'users/show'
   else
@@ -53,14 +53,12 @@ end
 
 #Shows a form to create a new product.
 get '/products/new' do 
-
   erb :'products/new'
-
 end
 
 #Form to edit user profile.
 get '/users/:id/edit' do 
-  @user = User.find(3)
+  @user = User.find(params[:id])
   erb :'users/edit'
 end
 
@@ -107,15 +105,14 @@ post '/users/new' do
 
 end
 
-put '/users/:id/changepassword' do
+post '/users/:id/changepassword' do
   @user = User.where(
-    id: session[:user_id],
+    id: params[:id],
     password: params[:old_password]
-    )
+    ).first
   if @user
-    @user.update_attributes(
-      password: params[:new_password]
-      )
+    @user.password = params[:new_password]
+    redirect to("/users/#{params[:id]}/edit")
   end
 end
 
@@ -126,7 +123,6 @@ post '/users/:id/edit' do
   @user.birthdate = params[:birthdate]
   @user.save
   redirect to("/users/#{params[:id]}/edit")
-
 end
 
 post 'products/new' do
@@ -137,6 +133,7 @@ post 'products/new' do
     url: params[:url]
     ) 
   @product.save
+  @user = User.where(id: session[:user_id])
+  @user.favourites.create(product_id: @product.id, user_id: @user.id)
   erb :'products/new'
-
 end
