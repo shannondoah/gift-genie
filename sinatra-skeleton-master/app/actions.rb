@@ -36,7 +36,7 @@ get '/users/:id' do
     @user = User.find(session[:user_id])
     erb :'users/show'
   else
-    @user_view = User.find(params[:id])
+    @user = User.find(params[:id])
     erb :'users/show_public'
   end
 end
