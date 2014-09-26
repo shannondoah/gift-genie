@@ -1,4 +1,4 @@
-<% session = true %>
+<% session = false %>
 <% if !session %>
 
 <% @user = User.find(3) %>
@@ -12,12 +12,14 @@
 
 <h1><%=@user.name %>'s WishList</h1>
 
-<ul class="filter">
-  Filter By:
-  <li><a href="/tl2">Price</a></li>
-  <li><a href="/tl2/item1">Newest First</a></li>
-  <li><a href="/tl2/item2">Oldest First</a></li>
-</ul>
+<div class="filter_bar">
+  <label>Filter By:</label>
+  <select>
+    <option value="X">Price</option>
+    <option value="X">Newest First</option>
+    <option value="X">Oldest First</option>
+</select>
+</div>
 
 <div class="product_info">
   <% @user.favourites.each do |fave|%>
@@ -49,12 +51,14 @@
 <h1>My WishList</h1>
 <h4><a href="/users/<%= @user.id%>/edit">Edit my profile</a></h4>
 
-<ul class="filter">
-  <h3>Filter By:</h3>
-  <li><a href="/tl2">Price</a></li>
-  <li><a href="/tl2/item1">Newest First</a></li>
-  <li><a href="/tl2/item2">Oldest First</a></li>
-</ul>
+<div class="filter_bar">
+  <label>Filter By:</label>
+  <select>
+    <option value="X">Price</option>
+    <option value="X">Newest First</option>
+    <option value="X">Oldest First</option>
+</select>
+</div>
 
 <div class="product_info">
   <% @user.favourites.each do |fave|%>
