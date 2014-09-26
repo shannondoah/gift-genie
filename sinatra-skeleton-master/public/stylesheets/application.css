@@ -16,7 +16,6 @@ img {
 	font-style: italic;
 }
 
-<<<<<<< HEAD
 
 .product-listview img {
   float: left;
@@ -47,7 +46,7 @@ img {
   border:2px solid blue;
   margin-left: 10px;
 }
-=======
+
 .round-button {
     display:inline-block;
     margin: 5px;
@@ -84,17 +83,17 @@ img {
 	background: #4A6AF7;
 }
 #favorite-button:hover  {
-	background: #9E9E9E;
+	background: #000;
 }
 
 #facebook-button:hover  {
-	background: #9E9E9E;
+	background: #000;
 }
 
 #similar-button:hover  {
-	background: #9E9E9E;
+	background: #000;
 }
 #email-button:hover  {
-	background: #9E9E9E;
+	background: #000;
 }
->>>>>>> productURLs
+
