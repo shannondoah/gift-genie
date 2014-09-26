@@ -62,9 +62,7 @@ end
 
 #Form to edit user profile.
 get '/users/:id/edit' do 
-
   erb :'users/edit'
-
 end
 
 #POST ACTIONS
@@ -75,13 +73,24 @@ post 'users/new' do
 end
 
 put 'users/:id/edit' do 
-
-  erb :'users/edit'
+  @user = User.find(3)
+  @user.update(
+    name: params[:name],
+    email: params[:email],
+    birthdate: params[:birthdate]
+    )
+  erb :'users/:id/edit'
 
 end
 
-post 'products/new' do 
-
- erb :'products/new'
+post 'products/new' do
+  @product = Product.new(
+    name: params[:name],
+    price: params[:price],
+    description: params[:description],
+    url: params[:url]
+    ) 
+  @product.save
+  erb :'products/new'
 
 end

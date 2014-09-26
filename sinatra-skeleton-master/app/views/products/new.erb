@@ -1,1 +1,28 @@
-<h1> Adding new products form</h1>
+<% @product = Product.new %>
+<h2> Add a new Wish to your List! </h2>
+  <form method="post" action="/products">
+  <div>
+    <label>Upload Image:</label> 
+    <input type="text" name="image" value="<% @product.img_filepath %>">
+  </div>
+  <div>
+    <label>Name:</label>
+    <input type="text" name="name" value="<% @product.name %>">
+  </div>
+  <div>
+    <label>Price:</label>
+    <input type="text" name="price" value="<% @product.price %>">
+  </div>
+  <div>
+    <label>Description:</label>
+    <input type="text" name="description" value="<% @product.description %>">
+  </div>
+  <div>
+    <label>URL:</label>
+    <input type="text" name="url" value="<% @product.url %>">
+  </div>
+  <div>
+    <input type="submit" value="Add this Wish!">
+  </div>
+  <!--<%# Favourite.new(user_id: session_id, product_id: new_product_id)%> -->
+</form>

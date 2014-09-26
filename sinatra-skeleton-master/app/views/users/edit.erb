@@ -11,7 +11,7 @@
 
 <div class="user_info">
   <h2> Personal Information </h2>
-  <form method="put" action="">
+  <form method="put" action="/users/<%= @user.id%>/edit">
   <div>
     <label>Name:</label> 
     <input type="text" name="name" value="<%= @user.name %>">
@@ -30,10 +30,25 @@
 </form>
 </div>
 
+<div class="change_password">
+  <h2> Change Password </h2>
+  <form method="put" action="/users/<%= @user.id%>/edit">
+  <div>
+    <label>Enter your old password:</label> 
+    <input type="password" name="name" value="<% @user.password%>">
+  </div>
+  <div>
+    <label>Enter your new password:</label> 
+    <input type="password" name="name" value="<% @user.password %>">
+  </div>
+  <input type="submit" value="Change Password">
+  </form>
+</div>
+
 <div class="product_info">
   <h2> Edit Products </h2>
 
-<form class="new_product" method="get" action="products/new">
+<form class="new_product" method="get" action="/products/new">
 <input type="submit" value="Add your own!">
 </form>
   <% @user.favourites.each do |fave|%>
