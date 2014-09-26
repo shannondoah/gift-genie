@@ -17,7 +17,7 @@
   </div>
 </form>
 <div>
-<a href="/users/<%= @user.id %>">Don't have an account?Sign up here... It's FREE!</a>
+<a href="/users/new">Don't have an account?Sign up here... It's FREE!</a>
 </div>
 <% else %>
 <p>
@@ -27,7 +27,12 @@
 Hello <%= @user.email %> : <a href="/logout">Logout</a>
 </p>
 <% end %>
-
+<form method="post" action="/search">
+  
+  <input type="text" name="search" value="<%= %>">
+  <input type="submit" value="Search" >
+  
+</form>
 
 
 <% @categories.each do |category|  %>
@@ -35,9 +40,3 @@ Hello <%= @user.email %> : <a href="/logout">Logout</a>
 <p><%= category.name %></p>
 <% end %>
 
-<form method="post" action="/search">
-  
-  <input type="text" name="search" value="<%= %>">
-  <input type="submit" value="Search" >
-  
-</form>

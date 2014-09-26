@@ -86,8 +86,8 @@ post '/users/new' do
     phone: params[:phone]
     )
   if @user.save
-    session[:user_id] = @user_id
-    redirect "/users/#{@user_id}"
+    session[:user_id] = @user.id
+    redirect "/users/#{@user.id}"
   else
     redirect '/users/new'
     
