@@ -34,7 +34,7 @@ Hello <%= @user.email %> : <a href="/logout">Logout</a>
 
 
 <% @categories.each do |category|  %>
-<img src="<%= category.img_filepath %>">
+<a href="/products?category=<%= category.name %>"><img src="<%= category.img_filepath %>"></a>
 <p><%= category.name %></p>
 <% end %>
 
