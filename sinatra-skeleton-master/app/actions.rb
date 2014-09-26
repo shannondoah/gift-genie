@@ -32,21 +32,15 @@ end
 
 #Shows user profile
 get '/users/:id' do 
-<<<<<<< HEAD
   login_check
-=======
-  @logged_in = session[:user_id] ? true : false
-  if(@logged_in)
-    @user = User.find_by_id(session[:user_id])
-  end
->>>>>>> 6bcc1766ca319cd5e94eb6e2c3f1278de2ccdd75
   erb :'users/show'
 
 end
 
 #Shows the list of products
 get '/products' do
-   login_check
+
+  login_check
   if params[:category]
     @product = params[:category]
     @products = Category.find_by("name = ?", @product).products
