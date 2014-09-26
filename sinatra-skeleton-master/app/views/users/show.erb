@@ -1,1 +1,73 @@
-<h1> Shows the users</h1>
+<% @user = User.find(3) %>
+
+<div class="cover_photo">
+  <img src="/user_img/cover_img/winding_road.jpg">
+    <div class="avatar">
+      <img src="/user_img/female2.jpg"/>
+    </div>
+</div>
+
+<h1><%=@user.name %>'s WishList</h1>
+
+<ul class="filter">
+  Filter By:
+  <li><a href="/tl2">Price</a></li>
+  <li><a href="/tl2/item1">Newest First</a></li>
+  <li><a href="/tl2/item2">Oldest First</a></li>
+</ul>
+
+<div class="product_info">
+  <% @user.favourites.each do |fave|%>
+    <% product = Product.find(fave.product_id) %>
+      <div class='product-listview'>
+      <table>
+        <tr>
+        <td><img src="<%= product.img_filepath%>"/></td>
+          <td ><p><%= product.name %></p>
+          <p id="description"><%= product.description %></p>
+          <h3>$<%= product.price %></h3></td>
+          <td><a href="#"><div id="get_button">I'm on it!</div></a></td>
+      </div>
+  <% end %>
+</div>
+
+<!--IF SESSION[user_id] = @user.id, page will look like this VVVV -->
+
+
+<% @user = User.find(3) %>
+
+<div class="cover_photo">
+  <img src="/user_img/cover_img/winding_road.jpg">
+    <div class="avatar">
+      <img src="/user_img/female2.jpg"/>
+    </div>
+</div>
+
+<h1>My WishList</h1>
+<h4><a href="/users/<%@user.id%>/edit">Edit my profile</a></h4>
+
+<ul class="filter">
+  <h3>Filter By:</h3>
+  <li><a href="/tl2">Price</a></li>
+  <li><a href="/tl2/item1">Newest First</a></li>
+  <li><a href="/tl2/item2">Oldest First</a></li>
+</ul>
+
+<div class="product_info">
+  <% @user.favourites.each do |fave|%>
+    <% product = Product.find(fave.product_id) %>
+      <div class='product-listview'>
+      <table>
+        <tr>
+        <td><img src="<%= product.img_filepath%>"/></td>
+          <td ><p><%= product.name %></p>
+          <p id="description"><%= product.description %></p>
+          <h3>$<%= product.price %></h3></td>
+          <td><form method="post" action="/products/remove_from_favourites">
+          <input type="submit" value="Delete Product">
+          </form></td>
+      </div>
+  <% end %>
+</div>
+
+
