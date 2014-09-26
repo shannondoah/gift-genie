@@ -14,10 +14,12 @@
 <% if @products %>
 	<% @products.each do |product| %>
 		<div class="product-container">
-			<img src="<%= product.img_filepath%> " class="product-preview"/>
+			<a href="<%= product.url%>"><img src="<%= product.img_filepath%> " class="product-preview"/></a>
 			<p><h4><%= product.name %></h4></p>
 			<p>$<%= product.price %></p>
 			<p id="description"><%= product.description %></p>
+
+				<a href="" class="round-button" id="favorite-button">fav</a><a href="https://www.facebook.com/dialog/share?app_id=145634995501895&display=popup&href=<%= product.url %>&redirect_uri=https%3A%2F%2Fdevelopers.facebook.com%2Ftools%2Fexplorer" class="round-button" id="facebook-button">fb</a><a href="" class="round-button" id="similar-button">share</a><a href="mailto:someone@somewhere.com?subject=Gift Genie wants you to check this out: <%= product.name %> &body=Visit the link for more information: <%= product.url %>" class="round-button" id="email-button">email</a>
 		</div>
 	<% end %>
 <% end %>

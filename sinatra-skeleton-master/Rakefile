@@ -21,6 +21,7 @@ desc "populate the database with sample user data"
 task "db:populate" do
   UserImporter.new.import
 
+# ===== Categories =====
   technology = Category.create(name: "Technology", img_filepath: "/cat_img/technology.png")
 
   sports = Category.create(name: "Sports", img_filepath: "/cat_img/sports.png")
@@ -31,75 +32,264 @@ task "db:populate" do
 
   pets = Category.create(name: "Pets", img_filepath: "/cat_img/pets.png")
 
+  books = pets = Category.create(name: "books", img_filepath: "/cat_img/books.png")
+
   entertainment = Category.create(name: "Entertainment", img_filepath: "/cat_img/entertainment.png")
 
+# ===== Product seed data =====
+  chromecast = Product.create(
+    name: 'Chrome Cast', 
+    description: 'Google Chromecast HDMI Streaming Media Player',
+    price: 34.64,
+    img_filepath: "/img/chromecast.jpg",
+    url: "http://www.amazon.com/Google-Chromecast-Streaming-Media-Player/dp/B00DR0PDNE/ref=zg_bs_electronics_2"
+  )
+  chromecast.categories << technology
 
-  lava_lamp = Product.create(name: "Electroplasma Lava Lamp", description: "This sweet lava lamp will give your giftee the ultimate in chill times.", price: 30, img_filepath: "/img/lava_lamp.jpg")
+  kindlepaperwhite = Product.create(
+    name: 'Kindle Paperwhite', 
+    description: 'Paperwhite Display, High Resolution, High Contrast, Built-in Light, Wi-Fi or Wi-Fi + Free 3G',
+    price: 119.00,
+    img_filepath: "/img/kindlepaperwhite.jpg",
+    url: "http://www.amazon.com/Kindle-Paperwhite-High-Resolution-Display-Built/dp/B00JG8GOWU/ref=zg_bs_electronics_4"
+  )
+  kindlepaperwhite.categories << technology
 
-  lava_lamp.categories << home
+  gopro = Product.create(
+    name: 'GoPro', 
+    description: 'HERO3+: Black Edition. Super View video mode captures the world"s most immersive wide angle perspective',
+    price: 399.00,
+    img_filepath: "/img/gopro.jpg",
+    url: "http://www.amazon.com/GoPro-CHDHX-302-HERO3-Black-Edition/dp/B00F3F0GLU/ref=zg_bs_electronics_14"
+  )
+  gopro.categories << technology
 
-  art = Product.create(name: "Sweet Art", description: "This painting is perfect gift for someone who understands the meaning of being deep and artsy.", price: 80, img_filepath: "/img/art.jpg")
+  ipad = Product.create(
+    name: 'Apple iPad mini ', 
+    description: 'MD531LL/A (16GB, Wi-Fi, White / Silver). 7.9-inch LED-backlit Multi-Touch Display; 1024-by-768 Resolution',
+    price: 244.87,
+    img_filepath: "/img/ipad.jpg",
+    url: "http://www.amazon.com/Apple-MD531LL-Wi-Fi-White-Silver/dp/B00746W9F2/ref=zg_bs_electronics_18"
+  )
+  ipad.categories << technology
 
-  art.categories << home
-
-  cat_necklace = Product.create(name: "Cat Necklace", description: "Take Precious with you, even when you have to leave her at home.", price: 20, img_filepath: "/img/cat_necklace.jpg")
-
-  cat_necklace.categories << pets
-
-  pet_tags = Product.create(name: "Pet Tags", description: "Give Scruffy a little piece of flair with this elegant copper tag.", price: 15, img_filepath: "/img/dog_tags.jpg")
-
-  pet_tags.categories << pets
-
-  food = Product.create(name: "The Hub", description: "A meal at the Hub is really all anyone wants.", price: 50, img_filepath: "/img/food.jpg")
-
-  food.categories << entertainment
-
-  theater = Product.create(name: "The Chauncey Theater", description: "An evening of theater will give the recipient a magical escape from the autumn doldrums.", price: 50, img_filepath: "/img/theatre.jpg")
-
-  theater.categories << entertainment
+  roku3 = Product.create(
+    name: 'Roku 3', 
+    description: 'Faster and more powerful. With up to 1080p HD video* and extended-range, dual-band wireless performance for increased speed',
+    price: 94.50,
+    img_filepath: "/img/roku3.jpg",
+    url: "http://www.amazon.com/Roku-3-Streaming-Media-Player/dp/B00BGGDVOO/ref=zg_bs_electronics_10"
+  )
+  roku3.categories << technology
 
   iphone = Product.create(
-    name: 'iPhone 6', 
-    description: 'New release from Apple.',
-    price: 700,
-    img_filepath: "/img/iphone6.jpg"
+    name: 'Apple iPhone 6', 
+    description: '4.7 Inch 16GB Unlocked (T-Mobile) Silver',
+    price: 812.40,
+    img_filepath: "/img/iphone6.jpg",
+    url: "http://www.amazon.com/Apple-Iphone-4-7-Inch-Unlocked/dp/B00NH2VLGK/ref=sr_1_2?s=electronics&ie=UTF8&qid=1411701062&sr=1-2&keywords=iphone+6"
   )
   iphone.categories << technology
-  galaxy = Product.create(
-    name: 'Samsung Galaxy S5', 
-    description: 'Samsung top smartphone',
-    price: 680,
-    img_filepath: "/img/galaxys5.jpg"
-  )
-  galaxy.categories << technology
-  jersey = Product.create(
-    name: 'Brazil Jersey', 
-    description: 'Brazil national team jersey.',
-    price: 70,
-    img_filepath: "/img/brazil.jpg"
-  )
-  jersey.categories << sports
-  skateboard = Product.create(
-    name: 'Carver Skateboard', 
-    description: 'Surf your Skateboard',
-    price: 300,
-    img_filepath: "/img/carver.jpg"
-  )
-  skateboard.categories << sports
+
   jeans = Product.create(
-    name: 'Diesel Jeans', 
-    description: 'Perfect fit.',
-    price: 150,
-    img_filepath: "/img/diesel.jpg"
+    name: 'Levis Mens 511 Slim Fit', 
+    description: 'Slim-fitting jean with button fly and slightly tapered leg',
+    price: 32.97,
+    img_filepath: "/img/jeans.jpg",
+    url: "http://www.amazon.com/Levis-Mens-511-Slim-Jean/dp/B0018OLTAC/ref=zg_bs_apparel_1"
   )
   jeans.categories << fashion
-  shoes = Product.create(
-    name: 'Vans shoes', 
-    description: 'Comfortable shoes',
-    price: 55,
-    img_filepath: "/img/vans.jpg"
+
+  jordan = Product.create(
+    name: 'Nike Mens Air Jordan V 5 Retro Basketball Shoe', 
+    description: 'Fresh! May make you jump higher. Made in China.',
+    price: 500.00,
+    img_filepath: "/img/jordan.jpg",
+    url: "http://www.amazon.com/Nike-Mens-Jordan-Retro-Basketball/dp/B004ZNMIE4"
   )
-  shoes.categories << fashion
+  jordan.categories << fashion
+
+  olaf = Product.create(
+    name: 'Olaf Deluxe Toddler Costume', 
+    description: 'Includes: Jumpsuit with plush overlay and soft character headpiece.',
+    price: 28.98,
+    img_filepath: "/img/olaf.jpg",
+    url: "http://www.amazon.com/Disguise-Disney-Frozen-Toddler-Costume/dp/B00M2J07KU/ref=zg_bs_apparel_7"
+  )
+  olaf.categories << fashion
+
+  raybans = Product.create(
+    name: 'Wayfarer Sunglasses', 
+    description: 'Ray-Ban RB2132. Acetate Frame. Acetate is a plant-based plastic known for being lightweight, yet durable.',
+    price: 72.68,
+    img_filepath: "/img/raybans.jpg",
+    url: "http://www.amazon.com/Ray-Ban-RB2132-New-Wayfarer-Sunglasses/dp/B003CIP4TE/ref=zg_bs_apparel_13"
+  )
+  raybans.categories << fashion
+
+  pettags = Product.create(
+    name: 'Heart Shaped Pet ID Tags', 
+    description: 'Give Scruffy a little piece of flair with these tough and lightweight Pet ID tags. Choose Your Color: Red, Blue, Pink, Purple, Silver, Green, Gold, Orange, Black',
+    price: 3.75,
+    img_filepath: "/img/pettags.jpg",
+    url: "http://www.amazon.com/Heart-Shaped-colors-available-Aluminum/dp/B00BZBHV96/ref=sr_1_21?s=pet-supplies&ie=UTF8&qid=1411701934&sr=1-21"
+  )
+  pettags.categories << pets
+
+  dogfood = Product.create(
+    name: 'Wellness Original Formula Dog Food', 
+    description: 'A unique grain-free, poultry-free choice for dogs over 1 year who need to maintain optimal daily health',
+    price: 52.38,
+    img_filepath: "/img/dogfood.jpg",
+    url: "http://www.amazon.com/Wellness-CORE-Original-Formula-26-Pound/dp/B000VTTAMY/ref=lp_2975359011_1_4?s=pet-supplies&ie=UTF8&qid=1411702096&sr=1-4"
+  )
+  dogfood.categories << pets
+
+  dogtoy = Product.create(
+    name: 'Squeaking Dog Toy', 
+    description: 'Marvin the moose is soft and cuddly, yet tough and durable. Squeaks to promote play!',
+    price: 21.30,
+    img_filepath: "/img/dogtoy.jpg",
+    url: "http://www.amazon.com/KONG-Cozie-Marvin-Moose-Medium/dp/B005AP3B8S/ref=sr_1_1?ie=UTF8&qid=1411719192&sr=8-1&keywords=marvin+the+moose+dog+toy"
+  )
+  dogtoy.categories << pets
+
+  pots = Product.create(
+    name: 'Stainless 13-Piece Cookware Set', 
+    description: '1-1/2 and 2-1/2 qt. saucepans with cover, 3 qt. sauté pan with cover, 4 qt. dutch oven with cover, pasta insert, and 8 and 10 inch skillets',
+    price: 199.00,
+    img_filepath: "/img/pots.jpg",
+    url: "http://www.amazon.com/gp/product/B002WPG0QY/ref=s9_hps_bw_g79_i4?pf_rd_m=ATVPDKIKX0DER&pf_rd_s=merchandised-search-6&pf_rd_r=1VSWM81P0QVSF48DC31S&pf_rd_t=101&pf_rd_p=1818859622&pf_rd_i=289814"
+  )
+  pots.categories << home
+
+  jars = Product.create(
+    name: 'Heritage Collection Pint Jars', 
+    description: 'Ideal for preserving jams, jellies, sauces, mustards & flavored vinegars. Custom time-tested ceiling compound helps ensure a quality seal with each lid',
+    price: 13.99,
+    img_filepath: "/img/jars.jpg",
+    url: "http://www.amazon.com/Ball-Heritage-Collection-Pint-Bands/dp/B00B80TJX0/ref=lp_289814_1_1?s=kitchen&ie=UTF8&qid=1411702392&sr=1-1"
+  )
+  jars.categories << home
+
+  hangpics = Product.create(
+    name: 'Umbra Hangit Photo Display', 
+    description: 'Hang it photo display by Umbra is a casual, artistic way to display your favorite photos and artworks or socks.',
+    price: 19.99,
+    img_filepath: "/img/hangpics.jpg",
+    url: "http://www.amazon.com/Umbra-315000-660-Hangit-Photo-Display/dp/B00EV5E76I/ref=lp_9627179011_1_6?s=home-garden&ie=UTF8&qid=1411716589&sr=1-6"
+  )
+  hangpics.categories << home
+
+  dyson = Product.create(
+    name: 'Dyson DC65 Upright Vacuum Cleaner', 
+    description: 'Tangle-free Turbine tool- The only turbine tool that doesnt tangle. Counter-rotating heads with brushes remove hair and dirt from upholstery.',
+    price: 500.44,
+    img_filepath: "/img/dyson.jpg",
+    url: "http://www.amazon.com/Dyson-DC65-Animal-Complete-Upright/dp/B00HNUFSLG/ref=lp_510110_1_8?s=vacuums&ie=UTF8&qid=1411702893&sr=1-8"
+  )
+  dyson.categories << home
+
+  lavalamp = Product.create(
+    name: 'Lava Lite Electroplasma Lamp', 
+    description: 'A fun alternative light source, the Electroplasma Lava Light sets the mood in any room. Designed to create light that looks like a lightening storm, the lamp is a great conversation piece',
+    price: 34.99,
+    img_filepath: "/img/lavalamp.jpg",
+    url: "http://www.amazon.com/Lava-Lite-Electroplasma-Lamp-Black/dp/B000Y7RLCE/ref=pd_sim_sbs_hg_5?ie=UTF8&refRID=0WB1EM7P1RR93CFRQC6F"
+  )
+  lavalamp.categories << home
+
+  drawer = Product.create(
+    name: 'InterDesign 3-Drawer Multipurpose Storage Container', 
+    description: 'Multipurpose use for makeup, jewelry, crafts, office supplies, and more',
+    price: 14.79,
+    img_filepath: "/img/drawer.jpg",
+    url: "http://www.amazon.com/InterDesign-3-Drawer-Multipurpose-Storage-Container/dp/B004KKXA58/ref=lp_165119011_1_2?s=storageorganization&ie=UTF8&qid=1411703044&sr=1-2"
+  )
+  drawer.categories << home
+
+ book1 = Product.create(
+    name: 'The Fourteenth Goldfish', 
+    description: 'Believe in the possible . . . with this brilliantly quirky, thought-provoking novel from New York Times bestseller, three-time Newbery Honor winner Jennifer L. Holm',
+    price: 10.74,
+    img_filepath: "/img/book1.jpg",
+    url: "http://www.amazon.com/gp/product/0375870644/ref=s9_al_bw_g14_i1?pf_rd_m=ATVPDKIKX0DER&pf_rd_s=merchandised-search-2&pf_rd_r=09K6EKR33NC7RC30XVFC&pf_rd_t=101&pf_rd_p=1912058882&pf_rd_i=6129870011"
+  )
+ book1.categories << books
+
+ book2 = Product.create(
+    name: 'The Walking Dead', 
+    description: 'The Walking Dead Book in hard cover. Ricks treaty with Negan and the Saviors is pushed to the limit, as both sides march toward ALL OUT WAR!',
+    price: 25.06,
+    img_filepath: "/img/book2.jpg",
+    url: "http://www.amazon.com/The-Walking-Dead-Book-10/dp/1632150344/ref=br_lf_m_1000401561_1_1_img?ie=UTF8&s=books&pf_rd_p=1926013862&pf_rd_s=center-2&pf_rd_t=1401&pf_rd_i=1000401561&pf_rd_m=ATVPDKIKX0DER&pf_rd_r=0DNQ5F2GXKXFYHAC4960"
+  )
+  book2.categories << books
+
+  book3 = Product.create(
+    name: 'Act Like a Success, Think Like a Success', 
+    description: 'In his phenomenal #1 New York Times bestseller Act Like a Lady, Think Like a Man, Steve Harvey told women what it takes to succeed in love.',
+    price: 15.59,
+    img_filepath: "/img/book3.jpg",
+    url: "http://www.amazon.com/Act-Like-Success-Think-Discovering/dp/0062220322/ref=br_lf_m_239353_1_1_img?ie=UTF8&s=books&pf_rd_p=1926013822&pf_rd_s=center-2&pf_rd_t=1401&pf_rd_i=239353&pf_rd_m=ATVPDKIKX0DER&pf_rd_r=0C3RV9REQASPGW1RX5C0"
+  )
+  book3.categories << books
+
+  bike = Product.create(
+    name: 'Hollandia Land Cruiser L Bicycle', 
+    description: 'Cannot stand on its own because its two tired... Six-speed womens cruiser bike with an aluminum frame.',
+    price: 120.22,
+    img_filepath: "/img/bike.jpg",
+    url: "http://www.amazon.ca/Hollandia-Land-Cruiser-Bicycle-26-Inch/dp/B004XYZY82/ref=sr_1_5?s=sports&ie=UTF8&qid=1411714157&sr=1-5"
+  )
+  bike.categories << sports
+
+  soccerball = Product.create(
+    name: 'America Royale Soccer Ball', 
+    description: 'Select Sport. Kick this. Comes in White or White/Yellow.',
+    price: 328.32,
+    img_filepath: "/img/soccerball.jpg",
+    url: "http://www.amazon.ca/Select-Sport-01-253-857-America-Royale/dp/B004L3FXFY/ref=sr_1_3?s=sports&ie=UTF8&qid=1411714431&sr=1-3"
+  )
+  soccerball.categories << sports
+
+  brazil = Product.create(
+    name: 'World Cup Brazil T-shirt Royal', 
+    description: 'Officially Licensed Merchandise.Detailed Graphic Artwork Design. This year was just unfortunate.',
+    price: 16.45,
+    img_filepath: "/img/brazil.jpg",
+    url: "http://www.amazon.ca/Old-Glory-Brazil-T-shirt-X-Large/dp/B00IJJ6VSE/ref=sr_1_2?s=sports&ie=UTF8&qid=1411714729&sr=1-2&keywords=brazil"
+  )
+  brazil.categories << sports
+
+  tennis = Product.create(
+    name: 'Wilson Tennis Racquet', 
+    description: 'Cause a racquet! Wilson 12 Pro Staff Six.One 95 BLX. Headsize: 95 square inches / 613 sq. cm',
+    price: 139.95,
+    img_filepath: "/img/tennis.jpg",
+    url: "http://www.amazon.ca/Wilson-Staff-Six-One-Tennis-Racquet-4/dp/B006YTLGXG/ref=sr_1_9?s=sports&ie=UTF8&qid=1411715259&sr=1-9"
+  )
+  tennis.categories << sports
+
+  xmen = Product.create(
+    name: 'X-Men: Days of Future Past [Blu-ray]', 
+    description: 'Hugh Jackman, James McAvoy, Michael Fassbender, Jennifer Lawrence, and Halle Berry. They all have the mutant power of beauty.',
+    price: 22.99,
+    img_filepath: "/img/x-men.jpg",
+    url: "http://www.amazon.com/X-Men-Days-Future-Past-Blu-ray/dp/B00K7IPGS6/ref=zg_mw_movies-tv_2"
+  )
+  xmen.categories << entertainment
+
+  bigbang = Product.create(
+    name: 'The Big Bang Theory: The Complete Seventh Season', 
+    description: 'Bazinga! We can all relate to the content',
+    price: 25.71,
+    img_filepath: "/img/bigbang.jpg",
+    url: "http://www.amazon.com/The-Big-Bang-Theory-Complete/dp/B00FEVZ960/ref=zg_mw_movies-tv_8"
+  )
+  bigbang.categories << entertainment
+
+
 
 end
 
