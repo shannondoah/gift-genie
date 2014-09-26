@@ -32,9 +32,13 @@ end
 
 #Shows user profile
 get '/users/:id' do 
-  login_check
-  erb :'users/show'
-
+  if params[:id] == session[:user_id]
+    @user = User.find(session[:user_id])
+    erb :'users/show'
+  else
+    @user_view = User.find(params[:id])
+    erb :'users/show_public'
+  end
 end
 
 #Shows the list of products
@@ -54,14 +58,13 @@ end
 
 #Shows a form to create a new product.
 get '/products/new' do 
-
   erb :'products/new'
-
 end
 
 #Form to edit user profile.
-get '/users/:id/edit' do
 
+get '/users/:id/edit' do
+  @user = User.find(params[:id])
   erb :'users/edit'
 end
 
@@ -108,17 +111,26 @@ post '/users/new' do
 
 end
 
-put 'users/:id/edit' do
-   
-  @user = User.find(3)
-  @user.update_attributes(
-    name: params[:name],
-    email: params[:email],
-    birthdate: params[:birthdate]
-    )
-  @user.save
-  erb :'users/:id/edit'
 
+post '/users/:id/changepassword' do
+  @user = User.where(
+    id: params[:id],
+    password: params[:old_password]
+    ).first
+  if @user
+    @user.password = params[:new_password]
+    redirect to("/users/#{params[:id]}/edit")
+  end
+end
+
+
+post '/users/:id/edit' do 
+  @user = User.find(params[:id])
+  @user.name = params[:name]
+  @user.email = params[:email]
+  @user.birthdate = params[:birthdate]
+  @user.save
+  redirect to("/users/#{params[:id]}/edit")
 end
 
 post 'products/new' do
@@ -129,6 +141,7 @@ post 'products/new' do
     url: params[:url]
     ) 
   @product.save
+  @user = User.where(id: session[:user_id])
+  @user.favourites.create(product_id: @product.id, user_id: @user.id)
   erb :'products/new'
-
 end

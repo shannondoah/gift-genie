@@ -1,22 +1,19 @@
 <div class="cover_photo">
   <img src="/user_img/cover_img/winding_road.jpg"> <%#= @user.cover_photo %>
     <div class="avatar">
-      <img src="/user_img/female2.jpg"/> <%#= @user.avatar %>
+      <img src="/user_img/female2.jpg"/>
+      <%#= @user.avatar %>
     </div>
 </div>
 
-<h1>My WishList</h1>
-<h4><a href="/users/<%= @user.id%>/edit">Edit my profile</a></h4>
-<p>
-<a href="/logout">Logout</a>
-</p>
+<h1><%=@user.name %>'s WishList</h1>
 
 <div class="filter_bar">
   <label>Filter By:</label>
   <select>
-    <option value="X">Price</option>
-    <option value="Y">Newest First</option>
-    <option value="Z">Oldest First</option>
+    <option value="<% :price %>">Price</option>
+    <option value="<% :created_at %>">Newest First</option>
+    <option value="<% :created_at %>">Oldest First</option>
 </select>
 </div>
 
@@ -30,14 +27,7 @@
           <td ><p><%= product.name %></p>
           <p id="description"><%= product.description %></p>
           <h3>$<%= product.price %></h3></td>
-          <td><form method="post" action="/products/remove_from_favourites">
-          <input type="submit" value="Delete Product">
-          </form></td>
+          <td><a href="#"><div id="get_button">I'm on it!</div></a></td>
       </div>
   <% end %>
 </div>
-
-
-
-
-
