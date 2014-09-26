@@ -112,6 +112,7 @@ put 'users/:id/edit' do
     email: params[:email],
     birthdate: params[:birthdate]
     )
+  @user.save
   erb :'users/:id/edit'
 
 end

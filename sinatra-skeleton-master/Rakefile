@@ -289,6 +289,38 @@ task "db:populate" do
   )
   bigbang.categories << entertainment
 
+# ===== Favourite seed data =====
+
+  Favourite.new(1,3)
+  Favourite.new(1,8)
+  Favourite.new(1,6)
+  Favourite.new(1,12)
+  Favourite.new(2,4)
+  Favourite.new(2,5)
+  Favourite.new(2,6)
+  Favourite.new(2,8)
+  Favourite.new(3,14)
+  Favourite.new(3,11)
+  Favourite.new(3,10)
+  Favourite.new(3,7)
+  Favourite.new(4,1)
+  Favourite.new(4,2)
+  Favourite.new(4,16)
+  Favourite.new(5,14)
+  Favourite.new(5,5)
+  Favourite.new(5,7)
+  Favourite.new(5,2)
+  Favourite.new(5,3)
+  Favourite.new(6,13)
+  Favourite.new(7,8)
+  Favourite.new(7,3)
+  Favourite.new(7,4)
+  Favourite.new(7,11)
+  Favourite.new(8,10)
+  Favourite.new(8,9)
+  Favourite.new(8,2)
+
+
 
 
 end
