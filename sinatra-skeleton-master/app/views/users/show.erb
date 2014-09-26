@@ -1,12 +1,11 @@
-<% session = false %>
-<% if !session %>
-
 <% @user = User.find(3) %>
+<% if true %>
 
 <div class="cover_photo">
-  <img src="/user_img/cover_img/winding_road.jpg">
+  <img src="@user/user_img/cover_img/winding_road.jpg"> <%#= @user.cover_photo %>
     <div class="avatar">
       <img src="/user_img/female2.jpg"/>
+      <%#= @user.avatar %>
     </div>
 </div>
 
@@ -15,9 +14,9 @@
 <div class="filter_bar">
   <label>Filter By:</label>
   <select>
-    <option value="X">Price</option>
-    <option value="X">Newest First</option>
-    <option value="X">Oldest First</option>
+    <option value="<% :price %>">Price</option>
+    <option value="<% :created_at %>">Newest First</option>
+    <option value="<% :created_at %>">Oldest First</option>
 </select>
 </div>
 
@@ -39,8 +38,6 @@
 <!--IF SESSION[user_id] = @user.id, page will look like this VVVV -->
 <% else %>
 
-<% @user = User.find(3) %>
-
 <div class="cover_photo">
   <img src="/user_img/cover_img/winding_road.jpg">
     <div class="avatar">
@@ -50,13 +47,16 @@
 
 <h1>My WishList</h1>
 <h4><a href="/users/<%= @user.id%>/edit">Edit my profile</a></h4>
+<p>
+<a href="/logout">Logout</a>
+</p>
 
 <div class="filter_bar">
   <label>Filter By:</label>
   <select>
     <option value="X">Price</option>
-    <option value="X">Newest First</option>
-    <option value="X">Oldest First</option>
+    <option value="Y">Newest First</option>
+    <option value="Z">Oldest First</option>
 </select>
 </div>
 
@@ -80,7 +80,5 @@
 <% end %>
 
 
-<p>
-<a href="/logout">Logout</a>
-</p>
+
 

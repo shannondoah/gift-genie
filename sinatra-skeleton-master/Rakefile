@@ -289,6 +289,53 @@ task "db:populate" do
   )
   bigbang.categories << entertainment
 
+# ===== Favourite seed data =====
+
+  user1 = User.find(1)
+  user1.favourites.create(product_id: 3, user_id: 1)
+  user1.favourites.create(product_id: 8, user_id: 1)
+  user1.favourites.create(product_id: 6, user_id: 1)
+  user1.favourites.create(product_id: 12, user_id: 1) 
+
+  user2 = User.find(2)
+  user2.favourites.create(product_id: 4, user_id: 2)
+  user2.favourites.create(product_id: 5, user_id: 2)
+  user2.favourites.create(product_id: 6, user_id: 2)
+  user2.favourites.create(product_id: 8, user_id: 2)
+
+  user3 = User.find(3)
+  user3.favourites.create(product_id: 14, user_id: 3) 
+  user3.favourites.create(product_id: 11, user_id: 3) 
+  user3.favourites.create(product_id: 10, user_id: 3) 
+  user3.favourites.create(product_id: 7, user_id: 3)
+
+  user4 = User.find(4)
+  user4.favourites.create(product_id: 1, user_id: 4)
+  user4.favourites.create(product_id: 2, user_id: 4)
+  user4.favourites.create(product_id: 16, user_id: 4) 
+
+  user5 = User.find(5)
+  user5.favourites.create(product_id: 14, user_id: 5) 
+  user5.favourites.create(product_id: 5, user_id: 5)
+  user5.favourites.create(product_id: 7, user_id: 5)
+  user5.favourites.create(product_id: 2, user_id: 5)
+  user5.favourites.create(product_id: 3, user_id: 5)
+
+  user6 = User.find(6)
+  user6.favourites.create(product_id: 13, user_id: 6) 
+
+  user7 = User.find(7)
+  user7.favourites.create(product_id: 8, user_id: 7)
+  user7.favourites.create(product_id: 3, user_id: 7)
+  user7.favourites.create(product_id: 4, user_id: 7)
+  user7.favourites.create(product_id: 11, user_id: 7) 
+
+  user8 = User.find(8)
+  user8.favourites.create(product_id: 10, user_id: 8) 
+  user8.favourites.create(product_id: 9, user_id: 8)
+  user8.favourites.create(product_id: 2, user_id: 8)
+
+
 
 
 end

@@ -32,7 +32,14 @@ end
 
 #Shows user profile
 get '/users/:id' do 
+<<<<<<< HEAD
   login_check
+=======
+  @logged_in = session[:user_id] ? true : false
+  if(@logged_in)
+    @user = User.find_by_id(session[:user_id])
+  end
+>>>>>>> 6bcc1766ca319cd5e94eb6e2c3f1278de2ccdd75
   erb :'users/show'
 
 end
@@ -110,11 +117,12 @@ end
 put 'users/:id/edit' do
    
   @user = User.find(3)
-  @user.update(
+  @user.update_attributes(
     name: params[:name],
     email: params[:email],
     birthdate: params[:birthdate]
     )
+  @user.save
   erb :'users/:id/edit'
 
 end
