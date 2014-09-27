@@ -12,16 +12,17 @@
 </p>
 
 <div class="filter_bar">
-  <label>Filter By:</label>
-  <select>
-    <option value="X">Price</option>
-    <option value="Y">Newest First</option>
-    <option value="Z">Oldest First</option>
+  <label>Order By:</label>
+  <select onchange="this.options[this.selectedIndex].value; window.location = this.options[this.selectedIndex].value;">
+    <option value="select">Select one...</option>
+    <option value="?orderby=price">Price (Lowest to Highest)</option>
+    <option value="?orderby=newest">Most Recently Added</option>
+    <option value="?orderby=oldest">Wanted the Longest</option>
 </select>
 </div>
 
 <div class="product_info">
-  <% @user.favourites.each do |fave|%>
+  <% @favourites.each do |fave|%>
     <% product = Product.find(fave.product_id) %>
       <div class='product-listview'>
       <table>
@@ -30,9 +31,7 @@
           <td ><p><%= product.name %></p>
           <p id="description"><%= product.description %></p>
           <h3>$<%= product.price %></h3></td>
-          <td><form method="post" action="/products/remove_from_favourites">
-          <input type="submit" value="Delete Product">
-          </form></td>
+          <td><a href="#"><div id="get_button">I'm on it!</div></a></td>
       </div>
   <% end %>
 </div>

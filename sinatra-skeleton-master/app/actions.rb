@@ -10,6 +10,21 @@ helpers do
      @user = User.new
     end  
   end
+
+  def filter_favourites
+    if params[:orderby] == 'price'
+      @favourites = Favourite.joins(:product).order('CAST(products.price as decimal)').where(user_id: @user.id)
+    elsif params[:orderby] == 'newest'
+      @favourites = Favourite.order('created_at').where(user_id: @user.id)
+    elsif params[:orderby] == 'oldest'
+      @favourites = Favourite.order('created_at DESC').where(user_id: @user.id)
+      # favourites = Favourite.order('created_at').find_by(user_id: @user.id)
+      # favourites = Favourite.joins(:product).order('created_at').find_by(user_id: @user.id)
+      # favourites = Favourite.joins(:product).order('CAST(products.price as decimal)').find_by(user_id: @user.id)
+    else
+      @favourites = Favourite.where(user_id: @user.id)
+    end
+  end
 end
 enable :sessions
 
@@ -32,28 +47,13 @@ end
 
 #Shows user profile
 get '/users/:id' do 
-   puts params[:id].class
-   puts session[:user_id].class
   if params[:id] == session[:user_id].to_s
-    puts "case 1"
     @user = User.find(session[:user_id])
+    filter_favourites
     erb :'users/show'
   else
-    puts "case 2"
     @user = User.find(params[:id])
-
-    if params[:orderby] == 'price'
-      @favourites = Favourite.joins(:product).order('CAST(products.price as decimal)').where(user_id: @user.id)
-    elsif params[:orderby] == 'newest'
-      @favourites = Favourite.order('created_at').where(user_id: @user.id)
-    elsif params[:orderby] == 'oldest'
-      @favourites = Favourite.order('created_at DESC').where(user_id: @user.id)
-      # favourites = Favourite.order('created_at').find_by(user_id: @user.id)
-      # favourites = Favourite.joins(:product).order('created_at').find_by(user_id: @user.id)
-      # favourites = Favourite.joins(:product).order('CAST(products.price as decimal)').find_by(user_id: @user.id)
-    else
-      @favourites = Favourite.where(user_id: @user.id)
-    end
+    filter_favourites
     erb :'users/show_public'
   end
 end
