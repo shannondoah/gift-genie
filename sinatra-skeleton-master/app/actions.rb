@@ -66,6 +66,7 @@ get '/products' do
   if params[:category]
     @product = params[:category]
     @products = Category.find_by("name = ?", @product).products
+    
     erb :'products/index' 
   else
     @products = Product.all
