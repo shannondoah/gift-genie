@@ -50,7 +50,7 @@ img {
 .round-button {
     display:inline-block;
     margin: 5px;
-    margin-left: 14px;
+    margin-left: 5px;
     width: 40px;
     height: 40px;
     line-height: 40px;
@@ -189,9 +189,24 @@ display: inline-block;
   margin-top: 5px;
 }
 
+.product-info {
+  padding:4px;
+}
+
+.product-image {
+  width:180px;
+  position: relative;
+  padding-left: 10px
+}
+
 .product-panel {
-  border: 1px solid red;
-  border-radius: 5px;
+  display: inline-block;
+  width: 250px;
+  height: 100%;
+  border-radius: 8px;
+  box-shadow: 3px 3px 3px #888888;
+  margin: 10px;
+  background-color: white;
 }
 
 
