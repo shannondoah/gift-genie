@@ -39,7 +39,7 @@
           <td ><p><%= product.name %></p>
           <p id="description"><%= product.description %></p>
           <h3>$<%= product.price %></h3></td>
-          <td><form method="post" action="/favourites/<%= product.id %>">
+          <td><form method="post" action="/favourites/<%= product.id %>/remove">
           <input type="submit" value="Delete Product">
           </form></td>
       </div>

@@ -164,8 +164,14 @@ post 'products/new' do
   redirect to("/users/#{@user.id}")
 end
 
-post '/favourites/:id' do
+post '/favourites/:id/remove' do
   @favourite = Favourite.where("user_id = ? AND product_id = ?", [session[:user_id]],[params[:id]]).first
   Favourite.destroy(@favourite.id)
+  redirect to("/users/#{session[:user_id]}")
+end
+
+get '/favourites/:id/add' do
+  login_check
+  @user.favourites.create(product_id: params[:id], user_id: @user.id)
   redirect to("/users/#{session[:user_id]}")
 end
