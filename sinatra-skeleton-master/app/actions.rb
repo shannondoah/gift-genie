@@ -25,6 +25,13 @@ helpers do
       @favourites = Favourite.where(user_id: @user.id)
     end
   end
+
+  def random_gift_generator
+    @random_gift_id = rand(Product.first.id..Product.last.id)
+    @product = Product.find_by("id = ?", @random_gift_id)
+    
+  end
+
 end
 enable :sessions
 
@@ -32,13 +39,55 @@ enable :sessions
 # Homepage (Root path)
 get '/' do
   login_check
-  @categories = Category.all
-  @category_page_count = (@categories.count/6).ceil
-  # => the number of categories we want per page is 6
+
+  @categories_all = Category.all
+  @categories1 = []
+  @categories2 = []
+  @categories3 = []
+  @categories4 = []
+  @categories5 = []
+  @categories6 = []
+
+# ===== Populate Category arrays =====
+  for i in 1..6 do 
+    @categories1 << @categories_all[i]
+  end
+  for i in 7..12 do 
+    @categories2 << @categories_all[i]
+  end
+  for i in 13..18 do 
+    @categories3 << @categories_all[i]
+  end
+  for i in 19..24 do 
+    @categories4 << @categories_all[i]
+  end
+  for i in 25..29 do 
+    @categories5 << @categories_all[i]
+  end
+  # for i in 31..36 do 
+  #   @categories6 << @categories_all[i]
+  # end
+
+  display_page = 1 + rand(5)
+  # => randomly picks a category array upon page load
+
+  case display_page
+  when 1
+    @categories = @categories1
+  when 2
+    @categories = @categories2
+  when 3
+    @categories = @categories3
+  when 4
+    @categories = @categories4
+  when 5
+    @categories = @categories5
+  # when 6
+  #   @categories = @categories6
+  end
 
 
-
-
+  
   @products = Product.all
   erb :index
 
@@ -69,17 +118,19 @@ end
 get '/products' do
 
   login_check
-  if params[:category]
-    @product = params[:category]
-    @products = Category.find_by("name = ?", @product).products
+  if params[:search]
+    @search_params = params[:search]
+    @products = Category.find_by("name = ?", @search_params).products
     
     erb :'products/index' 
+  elsif params[:random]
+    random_gift_generator
+    erb :'products/random'
   else
     @products = Product.all
     erb :'products/index' 
   end
 end
-
 
 #Shows a form to create a new product.
 get '/products/new' do 
