@@ -1,12 +1,77 @@
+<h2>Make a wish...</h2>
 
+<ul class="example-orbit-content" data-orbit data-options="slide_number:false;timer:false">
+  <li data-orbit-slide="categories1">
+      <div id="itemOne" class="content">
+        <% @categories1.each do |category|  %>
+          <div class="large-5 small-6 columns" id="category-panel">
+            <a href="/products?category=<%= category.name %>" class="category-image"><img src="<%= category.img_filepath %>"></a>
+            <br>
+            <h4 id="category-name"><%= category.name %></h4>
+          </div>
+        <% end %>
+      </div>
+    </li>
+    
+    <li data-orbit-slide="categories2">
+      <div id="itemTwo" class="content">
+        <% @categories2.each do |category|  %>
+          <div class="large-5 small-6 columns" id="category-panel">
+            <a href="/products?category=<%= category.name %>" class="category-image"><img src="<%= category.img_filepath %>"></a>
+            <br>
+            <h4 id="category-name"><%= category.name %></h4>
+          </div>
+        <% end %>
+      </div>
+    </li>
+    
+    <li data-orbit-slide="categories3">
+      <div id="itemThree" class="content">
+        <% @categories3.each do |category|  %>
+          <div class="large-5 small-6 columns" id="category-panel">
+            <a href="/products?category=<%= category.name %>" class="category-image"><img src="<%= category.img_filepath %>"></a>
+            <br>
+            <h4 id="category-name"><%= category.name %></h4>
+          </div>
+        <% end %>
+      </div>
+    </li>
 
+    <li data-orbit-slide="categories4">
+      <div id="itemFour" class="content">
+        <% @categories4.each do |category|  %>
+          <div class="large-5 small-6 columns" id="category-panel">
+            <a href="/products?category=<%= category.name %>" class="category-image"><img src="<%= category.img_filepath %>"></a>
+            <br>
+            <h4 id="category-name"><%= category.name %></h4>
+          </div>
+        <% end %>
+      </div>
+    </li>
 
-<% @categories.each do |category|  %>
-<div class="large-5 small-6 columns" id="category-panel">
-	<a href="/products?category=<%= category.name %>" class="category-image"><img src="<%= category.img_filepath %>"></a>
-	<br>
-	<h4 id="category-name"><%= category.name %></h5>
-</div>
+    <li data-orbit-slide="categories5">
+      <div id="itemFive" class="content">
+        <% @categories5.each do |category|  %>
+          <div class="large-5 small-6 columns" id="category-panel">
+            <a href="/products?category=<%= category.name %>" class="category-image"><img src="<%= category.img_filepath %>"></a>
+            <br>
+            <h4 id="category-name"><%= category.name %></h4>
+          </div>
+        <% end %>
+      </div>
+    </li>
 
-<% end %>
+    <li data-orbit-slide="categories6">
+      <div id="itemSix" class="content">
+        <% @categories6.each do |category|  %>
+          <div class="large-5 small-6 columns" id="category-panel">
+            <a href="/products?category=<%= category.name %>" class="category-image"><img src="<%= category.img_filepath %>"></a>
+            <br>
+            <h4 id="category-name"><%= category.name %></h4>
+          </div>
+        <% end %>
+      </div>
+    </li>
+</ul>
+
 
