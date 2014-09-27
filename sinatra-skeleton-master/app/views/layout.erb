@@ -29,6 +29,7 @@
   </style>
 
 
+  <script src="/javascript/application.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="/../../foundation/js/foundation.min.js"></script>
   <script src="/../../FullscreenSlitSlider/js/jquery.slitslider.js"></script>
@@ -63,8 +64,8 @@
                   <% if !@logged_in %>
                     <form method="post" action="/login">
                       <div class="small-9 columns">
-                        <input type="text" id="username" placeholder="username" name="email" value="">
-                        <input type="password" id="password" placeholder="password" name="password" value="">
+                        <input type="text" id="username" placeholder="username" name="email" value="<%= @user.email %>">
+                        <input type="password" id="password" placeholder="password" name="password" value="<%= @user.password %>">
                         <input class="button" id="login-button" type="submit" value="Login" >
                       </div>
                     </form>
@@ -145,7 +146,11 @@
     </div>
   </div>
 
-
+  <script>
+  function myFunction() {
+      document.getElementById("demo").innerHTML = "Paragraph changed.";
+  }
+  </script>
   <script>
     $(document).foundation();
   </script>
