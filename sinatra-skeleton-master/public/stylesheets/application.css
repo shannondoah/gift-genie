@@ -94,6 +94,11 @@ img {
   background: #000;
 }
 
+#search-button {
+  border-radius: 8px;
+  margin-left: 12px;
+}
+
 #product-panel {
   width:350px;
 
@@ -115,15 +120,34 @@ img {
 }
 
 #login-button {
-position: relative !important;
+position: relative;
 float: right;
 display: inline-block;
 z-index: 2;
 }
 
 #signup {
+  margin-top: 8px;
+  margin-left: 12px;
   position: absolute;
   float: left;
+  display:inline-block;
+}
+
+#myprofile {
+  margin-left: 15px;
+  display: inline-block;
+  font-size: 1.3em;
+}
+
+#username-display {
+display: inline-block;
+
+}
+
+.profile-info {
+  padding: 10px;
+  height: 90px;
 }
 
 .asterisk {
@@ -136,28 +160,9 @@ z-index: 2;
 }
 #category-name {
   text-align: center;
-<<<<<<< HEAD
   font-weight: bolder;
 }
 
-/*.category-image {
-  width:100%;
-  height:100%;
-  padding: 10px;
-}*/
-=======
-}
-
-.category-image {
-  width:100%;
-  height:100%;
-  padding: 10px;
-}
-
-.category-image img{
-  padding:30px;
-}
->>>>>>> frontendUI
 
 .category-image img{
   padding:25px;
@@ -171,6 +176,7 @@ z-index: 2;
   border: 2px solid;
   border-radius: 25px;
   box-shadow: 10px 10px 5px #888888;
+  background-color: white;
 }
 
 #copyright {
@@ -178,7 +184,9 @@ z-index: 2;
   display: block;
 }
 
-
+#top-bar-logo {
+  margin-top: 5px;
+}
 
 
 

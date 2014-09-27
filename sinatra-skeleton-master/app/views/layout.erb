@@ -14,29 +14,29 @@
 
   <link rel="stylesheet" href="/stylesheets/application.css">
   <link rel="stylesheet" href="/../../foundation/css/foundation.css">
+  <link rel="stylesheet" href="/../../FullscreenSlitSlider/css/custom.css">
+
+  <!-- Firefox, Chrome, Safari, IE 11+ and Opera. 96x96 pixels in size. -->
+  <link rel="icon" href="/img/layout/favicon.png">
 
   <style>
+  body {
+    background-image: url("/img/layout/background-pattern.jpg");
+  }
   .row{
     max-width: 75rem;
-    max-height: 5rem;
   }
   </style>
 
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="/../../foundation/js/foundation.min.js"></script>
+  <script src="/../../FullscreenSlitSlider/js/jquery.slitslider.js"></script>
 
   <title>Gift Genie v1.0</title>
 </head>
 
 <body>
-<!-- <ul class="breadcrumbs">
-  <li><a href="#">Home</a></li>
-  <li><a href="#">Features</a></li>
-  <li class="unavailable"><a href="#">Gene Splicing</a></li>
-  <li class="current"><a href="#">Cloning</a></li>
-</ul> -->
-
 
   <!-- Foundation Framework -->
 
@@ -49,7 +49,7 @@
                 <li class="name">
                   <h1>
                     <a href="/">
-                      <img src="/img/layout/logo-nav.png">
+                      <img src="/img/layout/logo-nav.png" id="top-bar-logo">
                     </a>
                   </h1>
                 </li>
@@ -60,31 +60,28 @@
                 <ul class="right">
                   <li class="divider"></li> 
 
-                <% if !@logged_in %>
-                  <form method="post" action="/login">
-                    <div class="small-9 columns">
-                      <input type="text" id="username" placeholder="username" name="email" value="<%= @user.email %>">
-                      <input type="password" id="password" placeholder="password" name="password" value="<%= @user.password %>">
-                      <input class="button" id="login-button" type="submit" value="Login" >
+                  <% if !@logged_in %>
+                    <form method="post" action="/login">
+                      <div class="small-9 columns">
+                        <input type="text" id="username" placeholder="username" name="email" value="<%= @user.email %>">
+                        <input type="password" id="password" placeholder="password" name="password" value="<%= @user.password %>">
+                        <input class="button" id="login-button" type="submit" value="Login" >
+                      </div>
+                    </form>
+                    <li class="divider"></li> 
+                      <div id="signup">
+                        <a href="/users/new">Sign up!</a>
+                      </div>
+                    <% else %>
+
+                    <div class="profile-info">
+                      <p>
+                        <a href="/users/<%= @user.id%>" id="myprofile">My profile</a>
+                        <div id="username-display"><%= @user.email %></div>
+                        <a href="/logout">Logout</a>
+                      </p>
                     </div>
-                  </form>
-
-
-                  <div id="signup">
-                    <a href="/users/new">Sign up</a>
-                  </div>
-                <% else %>
-                <div class="profile-info">
-                  <p>
-                    <a href="/users/<%= @user.id%>" id="myprofile">My profile</a>
-                    <br>
-                    <%= @user.email %>
-                    <br>
-                    <a href="/logout">Logout</a>
-                  </p>
-                </div>
-                
-          <% end %>
+                  <% end %>
 
                 </ul>
               </section>
@@ -98,17 +95,17 @@
             <div class="hide-for-small panel">
             <ul class="side-nav">
               <form method="get" action="/products">
-                <input type="text" name="category" >
+                <input type="text" name="category" placeholder="search items...">
                 <input class="button" id="search-button"type="submit" value="Search">
               </form>
               <li class="divider"></li>
               <li class="active"><a href="#">Popular Wishes</a></li>
               <li><a href="#">My Wishes</a></li>
               <li class="divider"></li>
-              <li><a href="#">Link 3</a></li>
-              <li><a href="#">Link 4</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact Us</a></li>
             </ul>
-              <h3>Poof!</h3>
+              <h3><a href="/products?random=random">Poof!</a></h3>
               <h5 class="subheader">
               </h5>
             </div>
@@ -134,10 +131,9 @@
           <div class="row">
             <div class="large-12 columns" id="copyright">
               <p>© Copyright Lighthouse Labs September Cohort Project Team 2</p>
+              <small><div>Icons made by Freepik, Scott de Jonge, Coucou, Icons8 from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>         is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div></small>
             </div>
-            <div class="large-9 columns">
-              <p>© Copyright Lighthouse Labs September Cohort Project Team 2</p>
-            </div>
+            
             <div class="large-3 columns">
               <ul class="inline-list right">
             

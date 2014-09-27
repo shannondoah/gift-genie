@@ -40,6 +40,12 @@ enable :sessions
 get '/' do
   login_check
   @categories = Category.all
+  @category_page_count = (@categories.count/6).ceil
+  # => the number of categories we want per page is 6
+
+
+
+
   @products = Product.all
   erb :index
 
@@ -75,14 +81,14 @@ get '/products' do
     @products = Category.find_by("name = ?", @product).products
     
     erb :'products/index' 
+  elsif params[:random]
+    random_gift_generator
+    erb :'products/random'
   else
+    
     @products = Product.all
     erb :'products/index' 
   end
-end
-
-get '/products/random' do 
-  erb :'products/random'
 end
 
 #Shows a form to create a new product.

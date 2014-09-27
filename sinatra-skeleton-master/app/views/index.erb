@@ -1,13 +1,10 @@
 
-<% @categories.each do |category|  %>
 
+<% @categories.each do |category|  %>
 <div class="large-5 small-6 columns" id="category-panel">
 	<a href="/products?category=<%= category.name %>" class="category-image"><img src="<%= category.img_filepath %>"></a>
 	<br>
 	<h4 id="category-name"><%= category.name %></h5>
-<!-- 	<div class="category-name-container">
-		<h5 id="category-name"><%= category.name %></h5>
-	</div> -->
 </div>
 
 <% end %>
