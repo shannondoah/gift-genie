@@ -75,7 +75,7 @@
                 <% else %>
                 <div class="profile-info">
                   <p>
-                    <a href="/users/show" id="myprofile">My profile</a>
+                    <a href="/users/<%= @user.id%>" id="myprofile">My profile</a>
                     <br>
                     <%= @user.email %>
                     <br>

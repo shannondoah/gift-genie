@@ -46,7 +46,8 @@ get '/users/new' do
 end
 
 #Shows user profile
-get '/users/:id' do 
+get '/users/:id' do
+ 
   if params[:id] == session[:user_id].to_s
     @user = User.find(session[:user_id])
     filter_favourites
