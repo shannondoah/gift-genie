@@ -86,8 +86,6 @@ get '/' do
   #   @categories = @categories6
   end
 
-
-  
   @products = Product.all
   erb :index
 
