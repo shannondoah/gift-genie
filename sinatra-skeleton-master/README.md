@@ -12,6 +12,9 @@ Brought to you by Lighthouse Labs
 ### Project Notes
 
 Category icon images should be 256x256 and be .png
+Category icons gathered from: http://www.flaticon.com/
 
 Product URL's need to be prefixed with 'http://'
+
+
 
