@@ -61,30 +61,30 @@ get '/' do
   for i in 19..24 do 
     @categories4 << @categories_all[i]
   end
-  for i in 25..29 do 
+  for i in 25..30 do 
     @categories5 << @categories_all[i]
   end
-  # for i in 31..36 do 
-  #   @categories6 << @categories_all[i]
-  # end
+  for i in 31..36 do 
+    @categories6 << @categories_all[i]
+  end
 
-  display_page = 1 + rand(5)
-  # => randomly picks a category array upon page load
+  # display_page = 1 + rand(5)
+  # # => randomly picks a category array upon page load
 
-  case display_page
-  when 1
-    @categories = @categories1
-  when 2
-    @categories = @categories2
-  when 3
-    @categories = @categories3
-  when 4
-    @categories = @categories4
-  when 5
-    @categories = @categories5
+  # case display_page
+  # when 1
+  #   @categories = @categories1
+  # when 2
+  #   @categories = @categories2
+  # when 3
+  #   @categories = @categories3
+  # when 4
+  #   @categories = @categories4
+  # when 5
+  #   @categories = @categories5
   # when 6
   #   @categories = @categories6
-  end
+  # end
 
 
   
