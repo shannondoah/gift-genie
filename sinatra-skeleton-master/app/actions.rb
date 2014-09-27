@@ -47,7 +47,7 @@ end
 
 #Shows user profile
 get '/users/:id' do
- 
+ login_check
   if params[:id] == session[:user_id].to_s
     @user = User.find(session[:user_id])
     filter_favourites
