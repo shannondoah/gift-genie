@@ -39,7 +39,9 @@
           <td ><p><%= product.name %></p>
           <p id="description"><%= product.description %></p>
           <h3>$<%= product.price %></h3></td>
-          <td><a href="#"><div id="get_button">I'm on it!</div></a></td>
+          <td><form method="post" action="/favourites/<%= product.id %>">
+          <input type="submit" value="Delete Product">
+          </form></td>
       </div>
   <% end %>
 </div>
