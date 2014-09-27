@@ -76,16 +76,15 @@ end
 get '/products' do
 
   login_check
-  if params[:category]
-    @product = params[:category]
-    @products = Category.find_by("name = ?", @product).products
+  if params[:search]
+    @search_params = params[:search]
+    @products = Category.find_by("name = ?", @search_params).products
     
     erb :'products/index' 
   elsif params[:random]
     random_gift_generator
     erb :'products/random'
   else
-    
     @products = Product.all
     erb :'products/index' 
   end
