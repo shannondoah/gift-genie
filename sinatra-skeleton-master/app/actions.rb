@@ -25,6 +25,13 @@ helpers do
       @favourites = Favourite.where(user_id: @user.id)
     end
   end
+
+  def random_gift_generator
+    @random_gift_id = rand(Product.first.id..Product.last.id)
+    @product = Product.find_by("id = ?", @random_gift_id)
+    
+  end
+
 end
 enable :sessions
 
@@ -74,6 +81,9 @@ get '/products' do
   end
 end
 
+get '/products/random' do 
+  erb :'products/random'
+end
 
 #Shows a form to create a new product.
 get '/products/new' do 
