@@ -23,35 +23,42 @@ task "db:populate" do
 
 # ===== Categories =====
   technology = Category.create(name: "Techie", img_filepath: "/cat_img/technology.png")
-  sports = Category.create(name: "Sporty", img_filepath: "/cat_img/sports.png")
+  sports = Category.create(name: "SportsFan", img_filepath: "/cat_img/sports.png")
   fashion = Category.create(name: "Fashionista", img_filepath: "/cat_img/fashion.png")
   home  = Category.create(name: "Home Body", img_filepath: "/cat_img/home.png")
-  pets = Category.create(name: "Dog Whisperer", img_filepath: "/cat_img/pets.png")
+  pets = Category.create(name: "Pet Whisperer", img_filepath: "/cat_img/pets.png")
   books = Category.create(name: "Book Worm", img_filepath: "/cat_img/books.png")
   entertainment = Category.create(name: "Entertainment", img_filepath: "/cat_img/entertainment.png")
   school = Category.create(name: "Scholar", img_filepath: "/cat_img/school.png")
   travel = Category.create(name: "Globe Trotter", img_filepath: "/cat_img/airplane.png")
-  art = Category.create(name: "Artistic", img_filepath: "/cat_img/art.png")
+  art = Category.create(name: "Artist", img_filepath: "/cat_img/art.png")
   baby = Category.create(name: "Baby", img_filepath: "/cat_img/baby.png")
-  bicycle = Category.create(name: "Bicycle", img_filepath: "/cat_img/bicycle.png")
+  bicycle = Category.create(name: "Cyclist", img_filepath: "/cat_img/bicycle.png")
   camera = Category.create(name: "Shutterbug", img_filepath: "/cat_img/camera.png")
   car = Category.create(name: "Car Czar", img_filepath: "/cat_img/car.png")
-  coffee = Category.create(name: "Caffeine", img_filepath: "/cat_img/coffee.png")
+  coffee = Category.create(name: "Caffeine Addict", img_filepath: "/cat_img/coffee.png")
+  culture = Category.create(name: "Culture Icon", img_filepath: "/cat_img/culture.png")
+  design = Category.create(name: "Design Lover", img_filepath: "/cat_img/design.png")
+  hipster = Category.create(name: "Hipster", img_filepath: "/cat_img/hipster.png")
   jewelry = Category.create(name: "Bling", img_filepath: "/cat_img/diamond.png")
   fitness = Category.create(name: "Fitness Junkie", img_filepath: "/cat_img/exercise.png")
   flower = Category.create(name: "Flower Power", img_filepath: "/cat_img/flower.png")
   food = Category.create(name: "Foodie", img_filepath: "/cat_img/food.png")
   headphone = Category.create(name: "Stereo", img_filepath: "/cat_img/headphone.png")
   hiking = Category.create(name: "Outdoors", img_filepath: "/cat_img/hiking.png")
-  instruments = Category.create(name: "Musical", img_filepath: "/cat_img/instruments.png")
+  instruments = Category.create(name: "Musician", img_filepath: "/cat_img/instruments.png")
   meat = Category.create(name: "Meat", img_filepath: "/cat_img/meat.png")
   medic = Category.create(name: "Medical", img_filepath: "/cat_img/medic.png")
-  movies = Category.create(name: "Movie Critic", img_filepath: "/cat_img/movies.png")
+  movies = Category.create(name: "Movie Buff", img_filepath: "/cat_img/movies.png")
+  natural = Category.create(name: "All Natural", img_filepath: "/cat_img/natural.png")
+  neat = Category.create(name: "Neat Freak", img_filepath: "/cat_img/neat.png")
+  party = Category.create(name: "Life of the Party", img_filepath: "/cat_img/party.png")
   plant = Category.create(name: "Green Thumb", img_filepath: "/cat_img/plant.png")
+  retro = Category.create(name: "Retro Aficionado", img_filepath: "/cat_img/retro.png")
   tv = Category.create(name: "Couch Warmer", img_filepath: "/cat_img/tv.png")
   videogames = Category.create(name: "Gamer", img_filepath: "/cat_img/videogames.png")
   weapons = Category.create(name: "Warrior", img_filepath: "/cat_img/weapons.png")
-  wine = Category.create(name: "Pre-game", img_filepath: "/cat_img/wine.png")
+  wine = Category.create(name: "Pre-gamer", img_filepath: "/cat_img/wine.png")
 
 # ===== Product seed data =====
   chromecast = Product.create(
@@ -61,7 +68,7 @@ task "db:populate" do
     img_filepath: "/img/chromecast.jpg",
     url: "http://www.amazon.com/Google-Chromecast-Streaming-Media-Player/dp/B00DR0PDNE/ref=zg_bs_electronics_2"
   )
-  chromecast.categories << technology
+  chromecast.categories.push(technology, entertainment, movies, tv) 
 
   kindlepaperwhite = Product.create(
     name: 'Kindle Paperwhite', 
@@ -70,7 +77,7 @@ task "db:populate" do
     img_filepath: "/img/kindlepaperwhite.jpg",
     url: "http://www.amazon.com/Kindle-Paperwhite-High-Resolution-Display-Built/dp/B00JG8GOWU/ref=zg_bs_electronics_4"
   )
-  kindlepaperwhite.categories << technology
+  kindlepaperwhite.categories.push(technology, books, home)
 
   gopro = Product.create(
     name: 'GoPro', 
@@ -79,7 +86,7 @@ task "db:populate" do
     img_filepath: "/img/gopro.jpg",
     url: "http://www.amazon.com/GoPro-CHDHX-302-HERO3-Black-Edition/dp/B00F3F0GLU/ref=zg_bs_electronics_14"
   )
-  gopro.categories << technology
+  gopro.categories.push(technology, camera, art, sports)
 
   ipad = Product.create(
     name: 'Apple iPad mini ', 
@@ -88,7 +95,7 @@ task "db:populate" do
     img_filepath: "/img/ipad.jpg",
     url: "http://www.amazon.com/Apple-MD531LL-Wi-Fi-White-Silver/dp/B00746W9F2/ref=zg_bs_electronics_18"
   )
-  ipad.categories << technology
+  ipad.categories.push(technology, entertainment, school)
 
   roku3 = Product.create(
     name: 'Roku 3', 
@@ -97,7 +104,7 @@ task "db:populate" do
     img_filepath: "/img/roku3.jpg",
     url: "http://www.amazon.com/Roku-3-Streaming-Media-Player/dp/B00BGGDVOO/ref=zg_bs_electronics_10"
   )
-  roku3.categories << technology
+  roku3.categories.push(technology,entertainment, movies, tv)
 
   iphone = Product.create(
     name: 'Apple iPhone 6', 
@@ -106,7 +113,7 @@ task "db:populate" do
     img_filepath: "/img/iphone6.jpg",
     url: "http://www.amazon.com/Apple-Iphone-4-7-Inch-Unlocked/dp/B00NH2VLGK/ref=sr_1_2?s=electronics&ie=UTF8&qid=1411701062&sr=1-2&keywords=iphone+6"
   )
-  iphone.categories << technology
+  iphone.categories.push(technology, hipster, headphone, camera)
 
   jeans = Product.create(
     name: 'Levis Mens 511 Slim Fit', 
@@ -115,7 +122,7 @@ task "db:populate" do
     img_filepath: "/img/jeans.jpg",
     url: "http://www.amazon.com/Levis-Mens-511-Slim-Jean/dp/B0018OLTAC/ref=zg_bs_apparel_1"
   )
-  jeans.categories << fashion
+  jeans.categories.push(fashion, design)
 
   jordan = Product.create(
     name: 'Nike Mens Air Jordan V 5 Retro Basketball Shoe', 
@@ -124,7 +131,7 @@ task "db:populate" do
     img_filepath: "/img/jordan.jpg",
     url: "http://www.amazon.com/Nike-Mens-Jordan-Retro-Basketball/dp/B004ZNMIE4"
   )
-  jordan.categories << fashion
+  jordan.categories.push(fashion, sports, retro)
 
   olaf = Product.create(
     name: 'Olaf Deluxe Toddler Costume', 
@@ -133,7 +140,7 @@ task "db:populate" do
     img_filepath: "/img/olaf.jpg",
     url: "http://www.amazon.com/Disguise-Disney-Frozen-Toddler-Costume/dp/B00M2J07KU/ref=zg_bs_apparel_7"
   )
-  olaf.categories << fashion
+  olaf.categories.push(fashion, baby, movies)
 
   raybans = Product.create(
     name: 'Wayfarer Sunglasses', 
@@ -142,7 +149,7 @@ task "db:populate" do
     img_filepath: "/img/raybans.jpg",
     url: "http://www.amazon.com/Ray-Ban-RB2132-New-Wayfarer-Sunglasses/dp/B003CIP4TE/ref=zg_bs_apparel_13"
   )
-  raybans.categories << fashion
+  raybans.categories.push(fashion, travel, retro)
 
   pettags = Product.create(
     name: 'Heart Shaped Pet ID Tags', 
@@ -151,7 +158,7 @@ task "db:populate" do
     img_filepath: "/img/pettags.jpg",
     url: "http://www.amazon.com/Heart-Shaped-colors-available-Aluminum/dp/B00BZBHV96/ref=sr_1_21?s=pet-supplies&ie=UTF8&qid=1411701934&sr=1-21"
   )
-  pettags.categories << pets
+  pettags.categories.push(pets, design)
 
   dogfood = Product.create(
     name: 'Wellness Original Formula Dog Food', 
@@ -160,7 +167,7 @@ task "db:populate" do
     img_filepath: "/img/dogfood.jpg",
     url: "http://www.amazon.com/Wellness-CORE-Original-Formula-26-Pound/dp/B000VTTAMY/ref=lp_2975359011_1_4?s=pet-supplies&ie=UTF8&qid=1411702096&sr=1-4"
   )
-  dogfood.categories << pets
+  dogfood.categories.push(pets)
 
   dogtoy = Product.create(
     name: 'Squeaking Dog Toy', 
@@ -169,7 +176,7 @@ task "db:populate" do
     img_filepath: "/img/dogtoy.jpg",
     url: "http://www.amazon.com/KONG-Cozie-Marvin-Moose-Medium/dp/B005AP3B8S/ref=sr_1_1?ie=UTF8&qid=1411719192&sr=8-1&keywords=marvin+the+moose+dog+toy"
   )
-  dogtoy.categories << pets
+  dogtoy.categories.push(pets)
 
   pots = Product.create(
     name: 'Stainless 13-Piece Cookware Set', 
@@ -178,7 +185,7 @@ task "db:populate" do
     img_filepath: "/img/pots.jpg",
     url: "http://www.amazon.com/gp/product/B002WPG0QY/ref=s9_hps_bw_g79_i4?pf_rd_m=ATVPDKIKX0DER&pf_rd_s=merchandised-search-6&pf_rd_r=1VSWM81P0QVSF48DC31S&pf_rd_t=101&pf_rd_p=1818859622&pf_rd_i=289814"
   )
-  pots.categories << home
+  pots.categories.push(home, neat)
 
   jars = Product.create(
     name: 'Heritage Collection Pint Jars', 
@@ -187,7 +194,7 @@ task "db:populate" do
     img_filepath: "/img/jars.jpg",
     url: "http://www.amazon.com/Ball-Heritage-Collection-Pint-Bands/dp/B00B80TJX0/ref=lp_289814_1_1?s=kitchen&ie=UTF8&qid=1411702392&sr=1-1"
   )
-  jars.categories << home
+  jars.categories.push(home, neat)
 
   hangpics = Product.create(
     name: 'Umbra Hangit Photo Display', 
@@ -196,7 +203,7 @@ task "db:populate" do
     img_filepath: "/img/hangpics.jpg",
     url: "http://www.amazon.com/Umbra-315000-660-Hangit-Photo-Display/dp/B00EV5E76I/ref=lp_9627179011_1_6?s=home-garden&ie=UTF8&qid=1411716589&sr=1-6"
   )
-  hangpics.categories << home
+  hangpics.categories.push(home, design, art, camera)
 
   dyson = Product.create(
     name: 'Dyson DC65 Upright Vacuum Cleaner', 
@@ -205,7 +212,7 @@ task "db:populate" do
     img_filepath: "/img/dyson.jpg",
     url: "http://www.amazon.com/Dyson-DC65-Animal-Complete-Upright/dp/B00HNUFSLG/ref=lp_510110_1_8?s=vacuums&ie=UTF8&qid=1411702893&sr=1-8"
   )
-  dyson.categories << home
+  dyson.categories.push(home, neat, design)
 
   lavalamp = Product.create(
     name: 'Lava Lite Electroplasma Lamp', 
@@ -214,7 +221,7 @@ task "db:populate" do
     img_filepath: "/img/lavalamp.jpg",
     url: "http://www.amazon.com/Lava-Lite-Electroplasma-Lamp-Black/dp/B000Y7RLCE/ref=pd_sim_sbs_hg_5?ie=UTF8&refRID=0WB1EM7P1RR93CFRQC6F"
   )
-  lavalamp.categories << home
+  lavalamp.categories.push(home, retro) 
 
   drawer = Product.create(
     name: 'InterDesign 3-Drawer Multipurpose Storage Container', 
@@ -223,7 +230,7 @@ task "db:populate" do
     img_filepath: "/img/drawer.jpg",
     url: "http://www.amazon.com/InterDesign-3-Drawer-Multipurpose-Storage-Container/dp/B004KKXA58/ref=lp_165119011_1_2?s=storageorganization&ie=UTF8&qid=1411703044&sr=1-2"
   )
-  drawer.categories << home
+  drawer.categories.push(home, neat)
 
  book1 = Product.create(
     name: 'The Fourteenth Goldfish', 
@@ -232,7 +239,7 @@ task "db:populate" do
     img_filepath: "/img/book1.jpg",
     url: "http://www.amazon.com/gp/product/0375870644/ref=s9_al_bw_g14_i1?pf_rd_m=ATVPDKIKX0DER&pf_rd_s=merchandised-search-2&pf_rd_r=09K6EKR33NC7RC30XVFC&pf_rd_t=101&pf_rd_p=1912058882&pf_rd_i=6129870011"
   )
- book1.categories << books
+ book1.categories.push(books, culture, hipster)
 
  book2 = Product.create(
     name: 'The Walking Dead', 
@@ -241,7 +248,7 @@ task "db:populate" do
     img_filepath: "/img/book2.jpg",
     url: "http://www.amazon.com/The-Walking-Dead-Book-10/dp/1632150344/ref=br_lf_m_1000401561_1_1_img?ie=UTF8&s=books&pf_rd_p=1926013862&pf_rd_s=center-2&pf_rd_t=1401&pf_rd_i=1000401561&pf_rd_m=ATVPDKIKX0DER&pf_rd_r=0DNQ5F2GXKXFYHAC4960"
   )
-  book2.categories << books
+  book2.categories.push(books, entertainment)
 
   book3 = Product.create(
     name: 'Act Like a Success, Think Like a Success', 
@@ -250,7 +257,7 @@ task "db:populate" do
     img_filepath: "/img/book3.jpg",
     url: "http://www.amazon.com/Act-Like-Success-Think-Discovering/dp/0062220322/ref=br_lf_m_239353_1_1_img?ie=UTF8&s=books&pf_rd_p=1926013822&pf_rd_s=center-2&pf_rd_t=1401&pf_rd_i=239353&pf_rd_m=ATVPDKIKX0DER&pf_rd_r=0C3RV9REQASPGW1RX5C0"
   )
-  book3.categories << books
+  book3.categories.push(books)
 
   bike = Product.create(
     name: 'Hollandia Land Cruiser L Bicycle', 
@@ -259,7 +266,7 @@ task "db:populate" do
     img_filepath: "/img/bike.jpg",
     url: "http://www.amazon.ca/Hollandia-Land-Cruiser-Bicycle-26-Inch/dp/B004XYZY82/ref=sr_1_5?s=sports&ie=UTF8&qid=1411714157&sr=1-5"
   )
-  bike.categories << sports
+  bike.categories.push(sports, bicycle, retro)
 
   soccerball = Product.create(
     name: 'America Royale Soccer Ball', 
@@ -268,7 +275,7 @@ task "db:populate" do
     img_filepath: "/img/soccerball.jpg",
     url: "http://www.amazon.ca/Select-Sport-01-253-857-America-Royale/dp/B004L3FXFY/ref=sr_1_3?s=sports&ie=UTF8&qid=1411714431&sr=1-3"
   )
-  soccerball.categories << sports
+  soccerball.categories.push(sports, fitness)
 
   brazil = Product.create(
     name: 'World Cup Brazil T-shirt Royal', 
@@ -277,7 +284,7 @@ task "db:populate" do
     img_filepath: "/img/brazil.jpg",
     url: "http://www.amazon.ca/Old-Glory-Brazil-T-shirt-X-Large/dp/B00IJJ6VSE/ref=sr_1_2?s=sports&ie=UTF8&qid=1411714729&sr=1-2&keywords=brazil"
   )
-  brazil.categories << sports
+  brazil.categories.push(sports, fitness, fashion)
 
   tennis = Product.create(
     name: 'Wilson Tennis Racquet', 
@@ -286,7 +293,7 @@ task "db:populate" do
     img_filepath: "/img/tennis.jpg",
     url: "http://www.amazon.ca/Wilson-Staff-Six-One-Tennis-Racquet-4/dp/B006YTLGXG/ref=sr_1_9?s=sports&ie=UTF8&qid=1411715259&sr=1-9"
   )
-  tennis.categories << sports
+  tennis.categories.push(sports, fitness)
 
   xmen = Product.create(
     name: 'X-Men: Days of Future Past [Blu-ray]', 
@@ -295,7 +302,7 @@ task "db:populate" do
     img_filepath: "/img/x-men.jpg",
     url: "http://www.amazon.com/X-Men-Days-Future-Past-Blu-ray/dp/B00K7IPGS6/ref=zg_mw_movies-tv_2"
   )
-  xmen.categories << entertainment
+  xmen.categories.push(entertainment, movies, tv)
 
   bigbang = Product.create(
     name: 'The Big Bang Theory: The Complete Seventh Season', 
@@ -304,7 +311,37 @@ task "db:populate" do
     img_filepath: "/img/bigbang.jpg",
     url: "http://www.amazon.com/The-Big-Bang-Theory-Complete/dp/B00FEVZ960/ref=zg_mw_movies-tv_8"
   )
-  bigbang.categories << entertainment
+  bigbang.categories.push(entertainment, tv, technology)
+
+  downton = Product.create(
+    name: 'Downton Abbey Seasons 1 - 4', 
+    description: 'This is the epic tale of the Crawley family and their servants.',
+    price: 25.71,
+    img_filepath: "/img/downton.jpg",
+    url: "http://www.amazon.ca/Masterpiece-Downton-Abbey-Seasons-Blu-ray/dp/B00KX45CJW/ref=sr_1_5?s=dvd&ie=UTF8&qid=1411844582&sr=1-5&keywords=downton+abbey"
+  )
+  downton.categories.push(entertainment, tv)
+
+  cookbook = Product.create(
+    name: 'The Oh She Glows Cookbook', 
+    description: 'Vegan recipes to glow from the inside out!',
+    price: 25.71,
+    img_filepath: "/img/cookbook.jpg",
+    url: "http://www.amazon.ca/The-Oh-She-Glows-Cookbook/dp/0143187228/ref=zg_bs_books_home_3?pf_rd_p=1291077342&pf_rd_s=center-3&pf_rd_t=2101&pf_rd_i=home&pf_rd_m=A3DWYIK6Y9EEQB&pf_rd_r=1ZV7KFMQKW9N1WRDV5D5"
+  )
+  cookbook.categories.push(books, food, natural, hipster)
+
+  smashbros = Product.create(
+    name: 'Super Smash Bros for Nintendo 3DS', 
+    description: 'Battle it out as Nintendo’s greatest heroes—right in the palm of your hand! ',
+    price: 25.71,
+    img_filepath: "/img/smashbros.jpg",
+    url: "http://www.amazon.ca/Super-Smash-Bros-Nintendo-3DS/dp/B00JATU2U0/ref=zg_bs_videogames_home_1?pf_rd_p=1291076482&pf_rd_s=center-5&pf_rd_t=2101&pf_rd_i=home&pf_rd_m=A3DWYIK6Y9EEQB&pf_rd_r=1ZV7KFMQKW9N1WRDV5D5"
+  )
+  smashbros.categories.push(videogames, entertainment, technology, retro)
+
+
+
 
 # ===== Favourite seed data =====
 
