@@ -3,7 +3,7 @@
 <div class="cover_photo">
   <img src="/user_img/cover_img/winding_road.jpg">
     <div class="avatar">
-      <img src="/user_img/female2.jpg"/>
+      <img src="<%= @user.avatar %>"/>
     </div>
 </div>
 
@@ -61,6 +61,7 @@
           <td><form method="post" action="/products/remove_from_favourites">
           <input type="submit" value="Delete Product">
           </form></td>
+          </table>
       </div>
   <% end %>
 </div> 
