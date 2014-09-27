@@ -120,7 +120,7 @@ get '/products' do
   login_check
   if params[:search]
     @search_params = params[:search]
-    @products = Category.find_by("name = ?", @search_params).products
+    @products = Product.where("name LIKE ? OR description LIKE ?", "%#{@search_params}%".downcase, "%#{@search_params}%".downcase)
     
     erb :'products/index' 
   elsif params[:random]
