@@ -140,6 +140,7 @@ end
 #Form to edit user profile.
 
 get '/users/:id/edit' do
+  login_check
   @user = User.find(params[:id])
   erb :'users/edit'
 end
