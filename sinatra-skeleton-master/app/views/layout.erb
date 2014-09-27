@@ -78,9 +78,7 @@
                     <div class="profile-info">
                       <p>
                         <a href="/users/<%= @user.id%>" id="myprofile">My profile</a>
-                        <br>
-                        <%= @user.email %>
-                        <br>
+                        <div id="username-display"><%= @user.email %></div>
                         <a href="/logout">Logout</a>
                       </p>
                     </div>

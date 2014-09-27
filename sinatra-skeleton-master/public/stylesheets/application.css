@@ -134,6 +134,21 @@ z-index: 2;
   display:inline-block;
 }
 
+#myprofile {
+  margin-left: 15px;
+  display: inline-block;
+  font-size: 1.3em;
+}
+
+#username-display {
+display: inline-block;
+
+}
+
+.profile-info {
+  padding: 10px;
+}
+
 .asterisk {
   color: red;
   font-size: 1.2rem;
