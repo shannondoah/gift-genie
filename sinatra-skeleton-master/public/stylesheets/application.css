@@ -147,6 +147,7 @@ display: inline-block;
 
 .profile-info {
   padding: 10px;
+  height: 90px;
 }
 
 .asterisk {
@@ -175,6 +176,7 @@ display: inline-block;
   border: 2px solid;
   border-radius: 25px;
   box-shadow: 10px 10px 5px #888888;
+  background-color: white;
 }
 
 #copyright {

@@ -22,19 +22,36 @@ task "db:populate" do
   UserImporter.new.import
 
 # ===== Categories =====
-  technology = Category.create(name: "Technology", img_filepath: "/cat_img/technology.png")
-
-  sports = Category.create(name: "Sports", img_filepath: "/cat_img/sports.png")
-
-  fashion = Category.create(name: "Fashion", img_filepath: "/cat_img/fashion.png")
-
-  home  = Category.create(name: "Home", img_filepath: "/cat_img/home.png")
-
-  pets = Category.create(name: "Pets", img_filepath: "/cat_img/pets.png")
-
-  books = Category.create(name: "Books", img_filepath: "/cat_img/books.png")
-
+  technology = Category.create(name: "Techie", img_filepath: "/cat_img/technology.png")
+  sports = Category.create(name: "Sporty", img_filepath: "/cat_img/sports.png")
+  fashion = Category.create(name: "Fashionista", img_filepath: "/cat_img/fashion.png")
+  home  = Category.create(name: "Home Body", img_filepath: "/cat_img/home.png")
+  pets = Category.create(name: "Dog Whisperer", img_filepath: "/cat_img/pets.png")
+  books = Category.create(name: "Book Worm", img_filepath: "/cat_img/books.png")
   entertainment = Category.create(name: "Entertainment", img_filepath: "/cat_img/entertainment.png")
+  school = Category.create(name: "Scholar", img_filepath: "/cat_img/school.png")
+  travel = Category.create(name: "Globe Trotter", img_filepath: "/cat_img/airplane.png")
+  art = Category.create(name: "Artistic", img_filepath: "/cat_img/art.png")
+  baby = Category.create(name: "Baby", img_filepath: "/cat_img/baby.png")
+  bicycle = Category.create(name: "Bicycle", img_filepath: "/cat_img/bicycle.png")
+  camera = Category.create(name: "Shutterbug", img_filepath: "/cat_img/camera.png")
+  car = Category.create(name: "Car Czar", img_filepath: "/cat_img/car.png")
+  coffee = Category.create(name: "Caffeine", img_filepath: "/cat_img/coffee.png")
+  jewelry = Category.create(name: "Bling", img_filepath: "/cat_img/diamond.png")
+  fitness = Category.create(name: "Fitness Junkie", img_filepath: "/cat_img/exercise.png")
+  flower = Category.create(name: "Flower Power", img_filepath: "/cat_img/flower.png")
+  food = Category.create(name: "Foodie", img_filepath: "/cat_img/food.png")
+  headphone = Category.create(name: "Stereo", img_filepath: "/cat_img/headphone.png")
+  hiking = Category.create(name: "Outdoors", img_filepath: "/cat_img/hiking.png")
+  instruments = Category.create(name: "Musical", img_filepath: "/cat_img/instruments.png")
+  meat = Category.create(name: "Meat", img_filepath: "/cat_img/meat.png")
+  medic = Category.create(name: "Medical", img_filepath: "/cat_img/medic.png")
+  movies = Category.create(name: "Movie Critic", img_filepath: "/cat_img/movies.png")
+  plant = Category.create(name: "Green Thumb", img_filepath: "/cat_img/plant.png")
+  tv = Category.create(name: "Couch Warmer", img_filepath: "/cat_img/tv.png")
+  videogames = Category.create(name: "Gamer", img_filepath: "/cat_img/videogames.png")
+  weapons = Category.create(name: "Warrior", img_filepath: "/cat_img/weapons.png")
+  wine = Category.create(name: "Pre-game", img_filepath: "/cat_img/wine.png")
 
 # ===== Product seed data =====
   chromecast = Product.create(
