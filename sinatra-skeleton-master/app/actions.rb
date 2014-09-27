@@ -68,7 +68,7 @@ get '/' do
   #   @categories6 << @categories_all[i]
   # end
 
-  display_page = 1 + rand(5)
+  display_page = rand(1..5)
   # => randomly picks a category array upon page load
 
   case display_page
