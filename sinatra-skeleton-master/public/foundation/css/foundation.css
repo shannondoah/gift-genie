@@ -1264,7 +1264,7 @@ meta.foundation-mq-topbar {
 .top-bar {
   overflow: hidden;
   /*height: 45px; */
-  height: 85px;
+  height: 95px;
   line-height: 45px;
   position: relative;
   background: #333333;
@@ -1370,7 +1370,7 @@ meta.foundation-mq-topbar {
   .top-bar-section ul li {
     background: #333333; }
     .top-bar-section ul li > a {
-      display: block;
+      display: inline-block;
       width: 100%;
       color: white;
       padding: 12px 0 12px 0;
@@ -1655,9 +1655,9 @@ meta.foundation-mq-topbar {
     .top-bar-section > ul > .divider, .top-bar-section > ul > [role="separator"] {
       border-bottom: none;
       border-top: none;
-      border-right: solid 1px #4e4e4e;
+      border-right: solid 5px #4e4e4e;
       clear: none;
-      height: 45px;
+      height: 95px;
       width: 0; }
     .top-bar-section .has-form {
       background: #333333;

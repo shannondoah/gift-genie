@@ -51,7 +51,7 @@
                 <li class="name">
                   <h1>
                     <a href="/">
-                      <img src="/img/layout/logo-nav.png">
+                      <img src="/img/layout/logo-nav.png" id="top-bar-logo">
                     </a>
                   </h1>
                 </li>
@@ -62,31 +62,29 @@
                 <ul class="right">
                   <li class="divider"></li> 
 
-                <% if !@logged_in %>
-                  <form method="post" action="/login">
-                    <div class="small-9 columns">
-                      <input type="text" id="username" placeholder="username" name="email" value="<%= @user.email %>">
-                      <input type="password" id="password" placeholder="password" name="password" value="<%= @user.password %>">
-                      <input class="button" id="login-button" type="submit" value="Login" >
+                  <% if !@logged_in %>
+                    <form method="post" action="/login">
+                      <div class="small-9 columns">
+                        <input type="text" id="username" placeholder="username" name="email" value="<%= @user.email %>">
+                        <input type="password" id="password" placeholder="password" name="password" value="<%= @user.password %>">
+                        <input class="button" id="login-button" type="submit" value="Login" >
+                      </div>
+                    </form>
+                    <li class="divider"></li> 
+                      <div id="signup">
+                        <a href="/users/new">Sign up!</a>
+                      </div>
+                    <% else %>
+                    <div class="profile-info">
+                      <p>
+                        <a href="/users/<%= @user.id%>" id="myprofile">My profile</a>
+                        <br>
+                        <%= @user.email %>
+                        <br>
+                        <a href="/logout">Logout</a>
+                      </p>
                     </div>
-                  </form>
-
-
-                  <div id="signup">
-                    <a href="/users/new">Sign up</a>
-                  </div>
-                <% else %>
-                <div class="profile-info">
-                  <p>
-                    <a href="/users/<%= @user.id%>" id="myprofile">My profile</a>
-                    <br>
-                    <%= @user.email %>
-                    <br>
-                    <a href="/logout">Logout</a>
-                  </p>
-                </div>
-                
-          <% end %>
+                  <% end %>
 
                 </ul>
               </section>
@@ -100,15 +98,15 @@
             <div class="hide-for-small panel">
             <ul class="side-nav">
               <form method="get" action="/products">
-                <input type="text" name="category" >
+                <input type="text" name="category" placeholder="search items...">
                 <input class="button" id="search-button"type="submit" value="Search">
               </form>
               <li class="divider"></li>
               <li class="active"><a href="#">Popular Wishes</a></li>
               <li><a href="#">My Wishes</a></li>
               <li class="divider"></li>
-              <li><a href="#">Link 3</a></li>
-              <li><a href="#">Link 4</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact Us</a></li>
             </ul>
               <h3>Poof!</h3>
               <h5 class="subheader">

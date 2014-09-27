@@ -94,6 +94,11 @@ img {
   background: #000;
 }
 
+#search-button {
+  border-radius: 8px;
+  margin-left: 12px;
+}
+
 #product-panel {
   width:350px;
 
@@ -122,6 +127,8 @@ z-index: 2;
 }
 
 #signup {
+  margin-top: 8px;
+  margin-left: 12px;
   position: absolute;
   float: left;
   display:inline-block;
@@ -160,7 +167,9 @@ z-index: 2;
   display: block;
 }
 
-
+#top-bar-logo {
+  margin-top: 5px;
+}
 
 
 
