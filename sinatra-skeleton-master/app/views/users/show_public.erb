@@ -9,16 +9,17 @@
 <h1><%=@user.name %>'s WishList</h1>
 
 <div class="filter_bar">
-  <label>Filter By:</label>
-  <select onchange="console.log(this.options[this.selectedIndex].value); window.location = this.options[this.selectedIndex].value;">
-    <option value="?orderby=price">Price</option>
-    <option value="?orderby=price">Newest First</option>
-    <option value="oldest_first">Oldest First</option>
+  <label>Order By:</label>
+  <select onchange="this.options[this.selectedIndex].value; window.location = this.options[this.selectedIndex].value;">
+    <option value="select">Select one...</option>
+    <option value="?orderby=price">Price (Lowest to Highest)</option>
+    <option value="?orderby=newest">Most Recently Added</option>
+    <option value="?orderby=oldest">Wanted the Longest</option>
 </select>
 </div>
 
 <div class="product_info">
-  <% @user.favourites.each do |fave|%>
+  <% @favourites.each do |fave|%>
     <% product = Product.find(fave.product_id) %>
       <div class='product-listview'>
       <table>
