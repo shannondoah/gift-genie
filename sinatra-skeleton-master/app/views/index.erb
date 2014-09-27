@@ -1,7 +1,5 @@
 
 
-<%= @categories.count %>
-
 <% @categories.each do |category|  %>
 <div class="large-5 small-6 columns" id="category-panel">
 	<a href="/products?category=<%= category.name %>" class="category-image"><img src="<%= category.img_filepath %>"></a>
