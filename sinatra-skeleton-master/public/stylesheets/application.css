@@ -189,5 +189,10 @@ display: inline-block;
   margin-top: 5px;
 }
 
+.product-panel {
+  border: 1px solid red;
+  border-radius: 5px;
+}
+
 
 /*  SLIDER Styling */

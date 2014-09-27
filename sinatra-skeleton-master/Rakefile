@@ -114,7 +114,7 @@ wine = Category.create(name: "Pre-gamer", img_filepath: "/cat_img/wine.png")
     img_filepath: "/img/iphone6.jpg",
     url: "http://www.amazon.com/Apple-Iphone-4-7-Inch-Unlocked/dp/B00NH2VLGK/ref=sr_1_2?s=electronics&ie=UTF8&qid=1411701062&sr=1-2&keywords=iphone+6"
   )
-  iphone.categories.push(technology, hipster, headphone, camera)
+  iphone.categories.push(technology, hipster, music, camera)
 
   jeans = Product.create(
     name: 'Levis Mens 511 Slim Fit', 
