@@ -32,16 +32,20 @@ end
 
 #Shows user profile
 get '/users/:id' do 
-  if params[:id] == session[:user_id]
+   puts params[:id].class
+   puts session[:user_id].class
+  if params[:id] == session[:user_id].to_s
+    puts "case 1"
     @user = User.find(session[:user_id])
     erb :'users/show'
   else
+    puts "case 2"
     @user = User.find(params[:id])
     
     if params.include? 'orderby'
       if params[:orderby] == 'price'
         favourites = Favourite.joins(:product).order('CAST(products.price as decimal)').find_by(user_id: @user.id)
-      elsif params['orberby'] == 'date'
+      elsif params['orderby'] == 'date'
         favourites = Favourite.find().where(:user_id == @user.id).orderby(:date)
       else
         # favourites = Favourite.order('created_at').find_by(user_id: @user.id)
