@@ -1,11 +1,17 @@
+<ul class="breadcrumbs">
+  <li><a href="/">Home</a></li>
+  <li class="unavailable"><a href="#">Users</a></li>
+  <li class="current"><a href="#">Add Profile</a></li>
+</ul>
+
 <h1>Create account</h1>
 <form method="post" action="/users/new">
   <div>
-    <label>Email:</label>
+    <label>Email:<span class="asterisk">*</span></label>
     <input type="text" name="email" value="<%= @user.email %>">
   </div>
   <div>
-    <label>Password:</label>
+    <label>Password:<span class="asterisk">*</span></label>
     <input type="password" name="password" value="<%= @user.password %>">
   </div>
   <div>
@@ -20,6 +26,7 @@
   <div>
     <label>Male:</label>
     <input type="radio" name="male" value="<%= @user.male %>">
+    <br>
     <label>Female:</label>
     <input type="radio" name="female" value="<%= @user.female %>">
   </div>
@@ -31,7 +38,8 @@
     <input type="phone" name="phone" value="<%= @user.phone %>">
   </div>
   <div>
-    <input type="submit" value="Submit" >
+  <br>
+    <input class ="button" type="submit" value="Submit" >
   </div>
 
 </form>
