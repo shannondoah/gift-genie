@@ -17,6 +17,16 @@ img {
 
 .product-listview {
   margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+#fave-product-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+#fave-product-price {
+  color: #4AC431;
 }
 
 #get_button {
@@ -318,6 +328,10 @@ display: inline-block;
   position: relative;
   z-index:1;
   border-radius: 50%;
+}
+
+#delete-button {
+  border-radius: 8px;
 }
 
 .filter_bar {

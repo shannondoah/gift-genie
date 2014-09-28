@@ -13,7 +13,7 @@
   <img src="<%= @user.avatar %>" id="profile-pic"/>
 </div>
 
-<h2><%= @user.email %>'s WishList</h2>
+<h2>My WishList</h2>
 <h4><a href="/users/<%= @user.id%>/edit">Edit my profile</a></h4>
 <p>
 <a href="/logout">Logout</a>
@@ -35,21 +35,18 @@
       <div class='product-listview'>
       <table>
         <tr>
-        <td><img src="<%= product.img_filepath%>"/></td>
-          <td ><p><%= product.name %></p>
+        <td><a href="<%= product.url %>"><img src="<%= product.img_filepath%>"/></a></td>
+          <td ><p id="fave-product-name"><%= product.name %></p>
           <p id="description"><%= product.description %></p>
-          <h3>$<%= product.price %></h3></td>
+          <h3 id="fave-product-price">$<%= product.price %></h3></td>
           <td><form method="post" action="/favourites/<%= product.id %>/remove">
-          <input type="submit" value="Delete Product">
+          <input class="button" type="submit" value="Remove from list" id="delete-button">
           </form></td>
           </table>
       </div>
   <% end %>
 </div>
 
-<form method="post" enctype='multipart/form-data' action="/upload">
-<input type="file" name="profilepic">
-<input type="submit" value="Upload">
 
 
 
