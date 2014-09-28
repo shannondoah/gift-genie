@@ -352,6 +352,7 @@ display: inline-block;
 #poof-image {
   margin-left: 100px;
   position: absolute;
+  z-index: 1;
 }
 
 .i-take-up-space {
