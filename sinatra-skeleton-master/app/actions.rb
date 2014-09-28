@@ -252,19 +252,28 @@ end
 
 post '/products/results' do
 
-  @categories = []
-  params.values.each do |id|
-    @categories << Category.find(id)
-  end
+  # @categories = []
+  # params.values.each do |id|
+  #   @categories << Category.find(id)
+  # end
+  # @categories = Category.where(id: params.values)
+  #@products = Product.where(category_id: params.values)
+ 
 
-  @products = []
-  Product.all.each do |product|
-    product.categories.each do |cat|
-      if @categories.include?(cat)
-        @products << product
-      end
-    end
-  end
+  # @products = []
+  # Product.all.each do |product|
+  #   product.categories.each do |cat|
+  #     if @categories.include?(cat)
+  #       @products << product
+  #     end
+  #   end
+  # end
+
+  @products = Product.joins(:categories)
+    .select("products.*, COUNT(categories.id) AS count")
+    .where(categories: { id: params.values })
+    .group(:product_id)
+    .order('count DESC')
   login_check
   erb :'products/index'
 end
