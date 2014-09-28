@@ -267,9 +267,11 @@ display: inline-block;
   background:-moz-linear-gradient( center top, #377bba 5%, #63b8ee 100% );
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#377bba', endColorstr='#63b8ee');
   background-color:#377bba;
-}.poof:active {
+}
+.poof:active {
   position:relative;
-  top:1px;
+  top:1px; 
+}
 
 #favorite-button {
   background: #D64545;
@@ -352,6 +354,7 @@ display: inline-block;
 #poof-image {
   margin-left: 100px;
   position: absolute;
+  z-index: 1;
 }
 
 .i-take-up-space {
