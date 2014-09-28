@@ -19,17 +19,6 @@ img {
   margin-bottom: 10px;
 }
 
-.cover_photo {
-  position: relative;
-  width: 500px;
-}
-
-.avatar {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-}
-
 #get_button {
   text-align: center;
   vertical-align: center;
@@ -360,8 +349,28 @@ display: inline-block;
   margin-top: 140px;
 }
 
+.cover_photo {
+  height:300px;
+  width: 100%;
+  position: absolute;
+  display: block;
+}
+
+#profile-pic {
+  margin-top: 149px;
+  margin-left: 5px;
+  width: 175px;
+  height: 100%;
+  position: relative;
+  z-index:1;
+  border-radius: 50%;
+}
+
+.filter_bar {
+  width: 200px;
+}
 
 
 
-/*  SLIDER Styling */
+
 

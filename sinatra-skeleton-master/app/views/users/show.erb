@@ -7,13 +7,13 @@
 
 
 <div class="cover_photo">
-  <img src="/user_img/cover_img/winding_road.jpg"> <%#= @user.cover_photo %>
-    <div class="avatar">
-      <img src="<%= @user.avatar %>"/> <%#= @user.avatar %>
-    </div>
+  <img src="<%= @user.cover_photo %>">
+</div>
+<div class="avatar">
+  <img src="<%= @user.avatar %>" id="profile-pic"/>
 </div>
 
-<h1>My WishList</h1>
+<h2><%= @user.email %>'s WishList</h2>
 <h4><a href="/users/<%= @user.id%>/edit">Edit my profile</a></h4>
 <p>
 <a href="/logout">Logout</a>
@@ -46,6 +46,12 @@
       </div>
   <% end %>
 </div>
+
+<form method="post" enctype='multipart/form-data' action="/upload">
+<input type="file" name="profilepic">
+<input type="submit" value="Upload">
+
+
 
 
 

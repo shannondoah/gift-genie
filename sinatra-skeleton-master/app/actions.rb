@@ -104,6 +104,25 @@ get '/users/:id' do
   if params[:id] == session[:user_id].to_s
     @user = User.find(session[:user_id])
     filter_favourites
+
+    case (1 + rand(5))
+    when 1
+      @user.cover_photo = '/user_img/cover_img/be_yourself.jpg'
+    when 2
+      @user.cover_photo = '/user_img/cover_img/car-smoke.jpg'
+    when 3
+      @user.cover_photo = '/user_img/cover_img/plant-in-desert-cover.jpg'
+    when 4
+      @user.cover_photo = '/user_img/cover_img/scuseme.jpg'
+    when 5
+      @user.cover_photo = '/user_img/cover_img/tetris-cover.jpg'
+    end
+
+    if @user.avatar == nil
+      @user.avatar = '/user_img/blank.png'
+    end
+    @user.save
+
     erb :'users/show'
   else
     @user = User.find(params[:id])
@@ -186,7 +205,6 @@ post '/users/new' do
 
 end
 
-
 post '/users/:id/changepassword' do
   @user = User.where(
     id: params[:id],
@@ -197,7 +215,6 @@ post '/users/:id/changepassword' do
     redirect to("/users/#{params[:id]}/edit")
   end
 end
-
 
 post '/users/:id/edit' do 
   @user = User.find(params[:id])
@@ -250,5 +267,6 @@ post '/products/results' do
   end
   login_check
   erb :'products/index'
-  
 end
+
+
