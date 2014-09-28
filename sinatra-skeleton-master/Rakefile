@@ -487,7 +487,7 @@ wine = Category.create(name: "Pre-gamer", img_filepath: "/cat_img/wine.png")
 
    wallart = Product.create(
     name: 'Oil Wall Art, 5 piece set', 
-    description: 'Painting Size:25x40cmx2,20x50cmx2,20x60cmx1(10x16inchx2,8x20inchx2,8x24inchx1)',
+    description: 'Paintings come in multiple sizes. Expensive look for a budget!',
     price: 48.99,
     img_filepath: "/img/wallart.jpeg",
     url: "http://www.amazon.ca/dp/B00CI2E5I6/ref=sr_1_12?s=kitchen&ie=UTF8&qid=1411852127&sr=1-12&keywords=painting"

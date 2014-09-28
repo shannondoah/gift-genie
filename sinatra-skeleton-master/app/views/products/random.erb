@@ -3,13 +3,22 @@
   <li class="current"><a href="#">Products</a></li>
 </ul>
 
-
-  <div class="large-5 small-6 columns">
-    <div class="product-panel">
-      <a href="<%= @product.url%>"><img src="<%= @product.img_filepath%> " class="product-preview"/></a>
-      <h5 id="product-name"><%= @product.name %></h5>
-      <h6 class="subheader" id="product-price">$<%= @product.price %></h6>
-      <p id="description"><%= @product.description %></p>
-      <a href="favourites/<%= @product.id %>/add" class="round-button" id="favorite-button">fav</a><a href="https://www.facebook.com/dialog/share?app_id=145634995501895&display=popup&href=<%= @product.url %>&redirect_uri=https%3A%2F%2Fdevelopers.facebook.com%2Ftools%2Fexplorer" class="round-button" id="facebook-button">fb</a><a href="" class="round-button" id="similar-button">share</a><a href="mailto:someone@somewhere.com?subject=Gift Genie wants you to check this out: <%= @product.name %> &body=Visit the link for more information: <%= @product.url %>" class="round-button" id="email-button">email</a>
+<img id="poof-image" src="/img/layout/poof.png"/>
+<div class="random-product-panel">
+    <a href="<%= @product.url%>"><img class="random-product-image" src="<%= @product.img_filepath%> "/></a>
+    <h5 id="random-product-name"><%= @product.name %></h5>
+    <h6 class="subheader" id="random-product-price">$<%= @product.price %></h6>
+    <div class="random-product-round-buttons">
+      <a href="favourites/<%= @product.id %>/add" class="round-button" id="favorite-button">fav</a><a href="https://www.facebook.com/dialog/share?app_id=145634995501895&display=popup&href=<%= @product.url %>&redirect_uri=https%3A%2F%2Fdevelopers.facebook.com%2Ftools%2Fexplorer" class="round-button" id="facebook-button">fb</a><a href="https://twitter.com/share?text=I%20want%20this!%20%20<%= @product.url%>" class="round-button" id="twitter-button">tweet</a><a href="mailto:someone@somewhere.com?subject=Gift Genie wants you to check this out: <%= @product.name %> &body=Visit the link for more information: <%= @product.url %>" class="round-button" id="email-button">email</a>
     </div>
   </div>
+  <div class="i-take-up-space">
+  </div>
+
+
+  <script>
+      $('#poof-image').click(function(e){    
+    $('#poof-image').fadeOut('slow', function(){
+    });
+  });
+  </script>
