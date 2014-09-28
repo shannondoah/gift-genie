@@ -14,7 +14,7 @@
     <option value="?orderby=price">Price (Lowest to Highest)</option>
     <option value="?orderby=newest">Most Recently Added</option>
     <option value="?orderby=oldest">Wanted the Longest</option>
-</select>
+  </select>
 </div>
 
 
@@ -28,18 +28,15 @@
           <td ><p><%= product.name %></p>
           <p id="description"><%= product.description %></p>
           <h3>$<%= product.price %></h3></td>
-          <td class="buttoncontainer"><button id="get_button" onclick="this.disabled = 'disabled';">I'm on it!</button></td>
+          <td><button id="get_button" onclick="this.disabled = 'disabled'; myFunction()">I'm on it!</button></td>
           </table>
       </div>
   <% end %>
 </div>
 
-<script type="text/javascript" src="scripts/jquery.js"></script>
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('#get_button').on('click', function(){
-      $(this).html("Got it!")
-  });
-  }
-  }
+<script>
+function myFunction() {
+    document.getElementById("get_button").innerHTML = "Claimed!";
+}
 </script>
+

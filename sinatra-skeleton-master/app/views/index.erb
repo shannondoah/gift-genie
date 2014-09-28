@@ -8,13 +8,14 @@
           
           <div class="large-5 small-6 columns" id="category-panel">
             <a class="category-image"><img src="<%= category.img_filepath %>"></a>
-            <label for="hidden" class="clicker">
-            <h4 id="category-name"><%= category.name %>&nbsp;<input id="hidden" type="checkbox" name="<%= category.name %>" value="<%= category.id %>" /></h4>
+            <label for="<%= category.name %>">
+            <h4 id="category-name"><%= category.name %>&nbsp;<input id="<%= category.name %>" type="checkbox" name="<%= category.name %>" value="<%= category.id %>" onclick="myFunction"/></h4>
             </label>
           </div>
           
         <% end %>
       </div>
+
     </li>
     
     <li data-orbit-slide="categories2">
@@ -22,7 +23,9 @@
         <% @categories2.each do |category|  %>
           <div class="large-5 small-6 columns" id="category-panel">
             <a href="/products?category=<%= category.name %>" class="category-image"><img src="<%= category.img_filepath %>"></a>
+            <label for="<%= category.name %>">
             <h4 id="category-name"><%= category.name %>&nbsp;<input id="hidden" type="checkbox" name="<%= category.name %>" value="<%= category.id %>" /></h4>
+            </label>
           </div>
         <% end %>
       </div>
@@ -33,7 +36,9 @@
         <% @categories3.each do |category|  %>
           <div class="large-5 small-6 columns" id="category-panel">
             <a href="/products?category=<%= category.name %>" class="category-image"><img src="<%= category.img_filepath %>"></a>
+            <label for="<%= category.name %>">
             <h4 id="category-name"><%= category.name %>&nbsp;<input id="hidden" type="checkbox" name="<%= category.name %>" value="<%= category.id %>" /></h4>
+            </label>
           </div>
         <% end %>
       </div>
@@ -44,7 +49,9 @@
         <% @categories4.each do |category|  %>
           <div class="large-5 small-6 columns" id="category-panel">
             <a href="/products?category=<%= category.name %>" class="category-image"><img src="<%= category.img_filepath %>"></a>
+            <label for="<%= category.name %>">
             <h4 id="category-name"><%= category.name %>&nbsp;<input id="hidden" type="checkbox" name="<%= category.name %>" value="<%= category.id %>" /></h4>
+            </label>
           </div>
         <% end %>
       </div>
@@ -55,7 +62,9 @@
         <% @categories5.each do |category|  %>
           <div class="large-5 small-6 columns" id="category-panel">
             <a href="/products?category=<%= category.name %>" class="category-image"><img src="<%= category.img_filepath %>"></a>
+            <label for="<%= category.name %>">
             <h4 id="category-name"><%= category.name %>&nbsp;<input id="hidden" type="checkbox" name="<%= category.name %>" value="<%= category.id %>" /></h4>
+            </label>
           </div>
         <% end %>
       </div>
@@ -66,7 +75,9 @@
         <% @categories6.each do |category|  %>
           <div class="large-5 small-6 columns" id="category-panel">
             <a href="/products?category=<%= category.name %>" class="category-image"><img src="<%= category.img_filepath %>"></a>
+            <label for="<%= category.name %>">
             <h4 id="category-name"><%= category.name %>&nbsp;<input id="hidden" type="checkbox" name="<%= category.name %>" value="<%= category.id %>" /></h4>
+            </label>
           </div>
         <% end %>
       </div>
