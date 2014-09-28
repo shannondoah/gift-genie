@@ -141,7 +141,7 @@ wine = Category.create(name: "Pre-gamer", img_filepath: "/cat_img/wine.png")
     img_filepath: "/img/olaf.jpeg",
     url: "http://www.amazon.com/Disguise-Disney-Frozen-Toddler-Costume/dp/B00M2J07KU/ref=zg_bs_apparel_7"
   )
-  olaf.categories.push(fashion, baby, movies)
+  olaf.categories.push(baby, movies)
 
   raybans = Product.create(
     name: 'Wayfarer Sunglasses', 

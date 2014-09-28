@@ -232,3 +232,22 @@ get '/favourites/:id/add' do
   @user.favourites.create(product_id: params[:id], user_id: @user.id)
   redirect to("/users/#{session[:user_id]}")
 end
+
+post '/products/results' do
+
+  params.values.each do |id|
+    @category = Category.find(id)
+  end
+
+  @products = []
+  Product.all.each do |product|
+    product.categories.each do |cat|
+      if @category == cat
+        @products << product
+      end
+    end
+  end
+  login_check
+  erb :'products/index'
+  
+end
