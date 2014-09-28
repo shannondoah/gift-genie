@@ -13,6 +13,11 @@ img {
   float: left;
   padding-right: 10px;
   clear: both;
+  width: auto;
+}
+
+#delete-button {
+  border-radius: 8px;
 }
 
 .product-listview {

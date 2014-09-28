@@ -74,7 +74,7 @@ wine = Category.create(name: "Pre-gamer", img_filepath: "/cat_img/wine.png")
   kindlepaperwhite = Product.create(
     name: 'Kindle Paperwhite', 
     description: 'Paperwhite Display, High Resolution, High Contrast, Built-in Light, Wi-Fi or Wi-Fi + Free 3G',
-    price: 119.00,
+    price: "119.00",
     img_filepath: "/img/kindlepaperwhite.jpeg",
     url: "http://www.amazon.com/Kindle-Paperwhite-High-Resolution-Display-Built/dp/B00JG8GOWU/ref=zg_bs_electronics_4"
   )

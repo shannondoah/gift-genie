@@ -18,3 +18,16 @@ Product URL's need to be prefixed with 'http://'
 
 
 
+### Features
+
+What we have implemented:
+
+
+What we want to still implement:
+- multiple lists per user
+- private messaging
+- tap into Amazon API
+
+
+
+
