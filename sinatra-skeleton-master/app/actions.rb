@@ -261,10 +261,15 @@ post '/products/results' do
   Product.all.each do |product|
     product.categories.each do |cat|
       if @categories.include?(cat)
-        @products << product
+        @products << product unless @products.include?(product)
       end
     end
   end
+
+  # @products.sort do |pa,pb|
+  #   pa.categories.length <=> pa.categories.length
+  # end
+  
   login_check
   erb :'products/index'
 end

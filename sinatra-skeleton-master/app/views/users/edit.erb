@@ -1,10 +1,16 @@
+<ul class="breadcrumbs">
+  <li><a href="/">Home</a></li>
+  <li class="unavailable"><a href="#">Users</a></li>
+  <li class="current"><a href="#">Edit Profile</a></li>
+</ul>
+
 <h1> Edit user profile </h1>
 
 <div class="cover_photo">
-  <img src="/user_img/cover_img/winding_road.jpg">
-    <div class="avatar">
-      <img src="<%= @user.avatar %>"/>
-    </div>
+  <img src="<%= @user.cover_photo %>">
+</div>
+<div class="avatar">
+  <img src="<%= @user.avatar %>" id="profile-pic"/>
 </div>
 
 <div class="user_info">
@@ -27,7 +33,15 @@
       </div>
   </form>
 </div>
-
+</br>
+<div class="changephoto">
+  <h2> Change Avatar </h2>
+    <form method="post" enctype='multipart/form-data' action="/upload">
+      <input type="file" name="profilepic">
+      <input type="submit" value="Upload">
+    </form>
+</div>    
+</br>
 <div class="change_password">
   <h2> Change Password </h2>
   <form method="post" action="/users/<%= @user.id%>/changepassword">
@@ -42,26 +56,27 @@
       <input type="submit" value="Change Password">
   </form>
 </div>
-
+</br>
 <div class="product_info">
   <h2> Edit Products </h2>
-
-<form class="new_product" method="get" action="/products/new">
-<input type="submit" value="Add your own!">
-</form>
-  <% @user.favourites.each do |fave|%>
-    <% product = Product.find(fave.product_id) %>
-      <div class='product-listview'>
-      <table>
-        <tr>
-        <td><img src="<%= product.img_filepath%>"/></td>
-          <td ><p><%= product.name %></p>
-          <p id="description"><%= product.description %></p>
-          <h3>$<%= product.price %></h3></td>
-          <td><form method="post" action="/products/remove_from_favourites">
-          <input type="submit" value="Delete Product">
-          </form></td>
-          </table>
-      </div>
-  <% end %>
+    <form class="new_product" method="get" action="/products/new">
+    <input type="submit" value="Add your own!">
+    </form>
+      <% @user.favourites.each do |fave|%>
+        <% product = Product.find(fave.product_id) %>
+          <div class='product-listview'>
+          <table>
+            <tr>
+            <td><img src="<%= product.img_filepath%>"/></td>
+              <td ><p><%= product.name %></p>
+              <p id="description"><%= product.description %></p>
+              <h3>$<%= product.price %></h3></td>
+              <td><form method="post" action="/products/remove_from_favourites">
+              <input type="submit" value="Delete Product">
+              </form></td>
+              </table>
+          </div>
+      <% end %>
 </div> 
+
+

@@ -1,8 +1,15 @@
+<ul class="breadcrumbs">
+  <li><a href="/">Home</a></li>
+  <li class="unavailable"><a href="#">Users</a></li>
+  <li class="current"><a href="#">Profile</a></li>
+</ul>
+
+
 <div class="cover_photo">
-  <img src="/user_img/cover_img/winding_road.jpg"> <%#= @user.cover_photo %>
-    <div class="avatar">
-      <img src="<%= @user.avatar %>"/>
-    </div>
+  <img src="/user_img/cover_img/plant-in-desert-cover.jpg">
+</div>
+<div class="avatar">
+  <img src="<%= @user.avatar %>" id="profile-pic"/>
 </div>
 
 <h1><%=@user.name %>'s WishList</h1>

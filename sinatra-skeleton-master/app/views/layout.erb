@@ -64,8 +64,8 @@
                   <% if !@logged_in %>
                     <form method="post" action="/login">
                       <div class="small-9 columns">
-                        <input type="text" id="username" placeholder="username" name="email" value="<%= @user.email %>">
-                        <input type="password" id="password" placeholder="password" name="password" value="<%= @user.password %>">
+                        <input type="text" id="username" placeholder="username" name="email" value="">
+                        <input type="password" id="password" placeholder="password" name="password" value="">
                         <input class="button" id="login-button" type="submit" value="Login" >
                       </div>
                     </form>
@@ -77,8 +77,8 @@
 
                     <div class="profile-info">
                       <p>
-                        <a href="/users/<%= @user.id%>" id="myprofile">My profile</a>
-                        <div id="username-display"><%= @user.email %></div>
+                        <a href="/users/<%= session[:user_id]%>" id="myprofile">My profile</a>
+                        <div id="username-display"><% email = User.find(session[:user_id]) %><%= email.email %></div>
                         <a href="/logout">Logout</a>
                       </p>
                     </div>
