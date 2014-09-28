@@ -366,6 +366,7 @@ display: inline-block;
 
 
 /* INVISIBLE CHECKBOX */
+  
   input[type=checkbox] {
    /*  position: absolute;
      top: -9999px;
@@ -378,8 +379,6 @@ display: inline-block;
      color: blue;
   }
 
-
-  /* Buttons */
-
-.button {
-  color: red; }
+.clicker {
+  color: blue;
+}

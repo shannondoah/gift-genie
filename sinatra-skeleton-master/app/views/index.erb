@@ -1,20 +1,19 @@
 <h2>Make a wish...</h2>
 
-<!-- <label for="toggle-1">Do Something</label>
-<input type="checkbox" id="toggle-1"> -->
-<!-- <div id="testtest">Control me</div> -->
-
 <form id="select" method="post" action="/products/results">
 <ul id ="category-slider" class="example-orbit-content" data-orbit data-options="slide_number:false;timer:false">
   <li data-orbit-slide="categories1">
       <div id="itemOne" class="content">
         <% @categories1.each do |category|  %>
+          
           <div class="large-5 small-6 columns" id="category-panel">
             <a class="category-image"><img src="<%= category.img_filepath %>"></a>
             <br>
-            <a href="/products?category=<%= category.name %>" class="category-image"><img src="<%= category.img_filepath %>"></a>
-            <h4 id="category-name"><%= category.name %><input type="checkbox" name="<%= category.name %>" value="<%= category.id %>"></h4>
+            <label for="hidden" class="clicker">
+            <h4 id="category-name"><%= category.name %>&nbsp;<input id="hidden" type="checkbox" name="<%= category.name %>" value="<%= category.id %>" /></h4>
+            </label>
           </div>
+          
         <% end %>
       </div>
     </li>
@@ -25,7 +24,7 @@
           <div class="large-5 small-6 columns" id="category-panel">
             <a href="/products?category=<%= category.name %>" class="category-image"><img src="<%= category.img_filepath %>"></a>
             <br>
-            <input type="checkbox" name="<%= category.name %>" value="<%= category.id %>">
+            <!-- <input type="checkbox" name="<%= category.name %>" value="<%= category.id %>"> -->
             <h4 id="category-name"><%= category.name %></h4>
           </div>
         <% end %>
