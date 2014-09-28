@@ -41,32 +41,32 @@ get '/' do
   login_check
 
   @categories_all = Category.all
-  @categories1 = []
-  @categories2 = []
-  @categories3 = []
-  @categories4 = []
-  @categories5 = []
-  @categories6 = []
+  @categories1 = Category.where("id = ? OR id = ? OR id = ? OR id = ? OR id = ? OR id = ?", [5],[11],[17],[23],[29],[35] )
+  @categories2 = Category.where("id = ? OR id = ? OR id = ? OR id = ? OR id = ? OR id = ?", [3],[9],[15],[21],[27],[33] )
+  @categories3 = Category.where("id = ? OR id = ? OR id = ? OR id = ? OR id = ? OR id = ?", [2],[8],[14],[20],[26],[32] )
+  @categories4 = Category.where("id = ? OR id = ? OR id = ? OR id = ? OR id = ? OR id = ?", [1],[7],[13],[19],[25],[31] )
+  @categories5 = Category.where("id = ? OR id = ? OR id = ? OR id = ? OR id = ? OR id = ?", [6],[12],[18],[24],[30],[36] )
+  @categories6 = Category.where("id = ? OR id = ? OR id = ? OR id = ? OR id = ? OR id = ?", [4],[10],[16],[22],[28],[34] )
 
 # ===== Populate Category arrays =====
-  for i in 1..6 do 
-    @categories1 << @categories_all[i]
-  end
-  for i in 7..12 do 
-    @categories2 << @categories_all[i]
-  end
-  for i in 13..18 do 
-    @categories3 << @categories_all[i]
-  end
-  for i in 19..24 do 
-    @categories4 << @categories_all[i]
-  end
-  for i in 25..30 do 
-    @categories5 << @categories_all[i]
-  end
-  for i in 31..36 do 
-    @categories6 << @categories_all[i]
-  end
+  # for i in 1..6 do 
+  #   @categories1 << @categories_all[i]
+  # end
+  # for i in 7..12 do 
+  #   @categories2 << @categories_all[i]
+  # end
+  # for i in 13..18 do 
+  #   @categories3 << @categories_all[i]
+  # end
+  # for i in 19..24 do 
+  #   @categories4 << @categories_all[i]
+  # end
+  # for i in 25..30 do 
+  #   @categories5 << @categories_all[i]
+  # end
+  # for i in 31..36 do 
+  #   @categories6 << @categories_all[i]
+  # end
 
   # display_page = 1 + rand(5)
   # # => randomly picks a category array upon page load
