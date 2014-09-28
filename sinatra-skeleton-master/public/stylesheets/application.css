@@ -16,6 +16,13 @@ img {
   width: auto;
 }
 
+#show-me {
+  border-radius: 8px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #delete-button {
   border-radius: 8px;
 }
