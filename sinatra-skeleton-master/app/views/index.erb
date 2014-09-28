@@ -5,15 +5,15 @@
 <!-- <div id="testtest">Control me</div> -->
 
 <form id="select" method="post" action="/products/results">
-<ul class="example-orbit-content" data-orbit data-options="slide_number:false;timer:false;next_on_click:false">
+<ul id ="category-slider" class="example-orbit-content" data-orbit data-options="slide_number:false;timer:false">
   <li data-orbit-slide="categories1">
       <div id="itemOne" class="content">
         <% @categories1.each do |category|  %>
           <div class="large-5 small-6 columns" id="category-panel">
             <a class="category-image"><img src="<%= category.img_filepath %>"></a>
             <br>
-            <input type="checkbox" name="<%= category.name %>" value="<%= category.id %>">
-            <h4 id="category-name"><%= category.name %></h4>
+            <a href="/products?category=<%= category.name %>" class="category-image"><img src="<%= category.img_filepath %>"></a>
+            <h4 id="category-name"><%= category.name %><input type="checkbox" name="<%= category.name %>" value="<%= category.id %>"></h4>
           </div>
         <% end %>
       </div>
@@ -37,7 +37,6 @@
         <% @categories3.each do |category|  %>
           <div class="large-5 small-6 columns" id="category-panel">
             <a href="/products?category=<%= category.name %>" class="category-image"><img src="<%= category.img_filepath %>"></a>
-            <br>
             <h4 id="category-name"><%= category.name %></h4>
           </div>
         <% end %>
@@ -49,7 +48,6 @@
         <% @categories4.each do |category|  %>
           <div class="large-5 small-6 columns" id="category-panel">
             <a href="/products?category=<%= category.name %>" class="category-image"><img src="<%= category.img_filepath %>"></a>
-            <br>
             <h4 id="category-name"><%= category.name %></h4>
           </div>
         <% end %>
@@ -61,7 +59,6 @@
         <% @categories5.each do |category|  %>
           <div class="large-5 small-6 columns" id="category-panel">
             <a href="/products?category=<%= category.name %>" class="category-image"><img src="<%= category.img_filepath %>"></a>
-            <br>
             <h4 id="category-name"><%= category.name %></h4>
           </div>
         <% end %>
@@ -73,7 +70,6 @@
         <% @categories6.each do |category|  %>
           <div class="large-5 small-6 columns" id="category-panel">
             <a href="/products?category=<%= category.name %>" class="category-image"><img src="<%= category.img_filepath %>"></a>
-            <br>
             <h4 id="category-name"><%= category.name %></h4>
           </div>
         <% end %>
