@@ -1,14 +1,13 @@
 <h2>Make a wish...</h2>
 
 <form id="select" method="post" action="/products/results">
-<ul id ="category-slider" class="example-orbit-content" data-orbit data-options="slide_number:false;timer:false">
+<ul id ="category-slider" class="example-orbit-content" data-orbit data-options="slide_number:false;timer:false;next_on_click:false">
   <li data-orbit-slide="categories1">
       <div id="itemOne" class="content">
         <% @categories1.each do |category|  %>
           
           <div class="large-5 small-6 columns" id="category-panel">
             <a class="category-image"><img src="<%= category.img_filepath %>"></a>
-            <br>
             <label for="hidden" class="clicker">
             <h4 id="category-name"><%= category.name %>&nbsp;<input id="hidden" type="checkbox" name="<%= category.name %>" value="<%= category.id %>" /></h4>
             </label>
@@ -23,9 +22,7 @@
         <% @categories2.each do |category|  %>
           <div class="large-5 small-6 columns" id="category-panel">
             <a href="/products?category=<%= category.name %>" class="category-image"><img src="<%= category.img_filepath %>"></a>
-            <br>
-            <!-- <input type="checkbox" name="<%= category.name %>" value="<%= category.id %>"> -->
-            <h4 id="category-name"><%= category.name %></h4>
+            <h4 id="category-name"><%= category.name %>&nbsp;<input id="hidden" type="checkbox" name="<%= category.name %>" value="<%= category.id %>" /></h4>
           </div>
         <% end %>
       </div>
@@ -36,7 +33,7 @@
         <% @categories3.each do |category|  %>
           <div class="large-5 small-6 columns" id="category-panel">
             <a href="/products?category=<%= category.name %>" class="category-image"><img src="<%= category.img_filepath %>"></a>
-            <h4 id="category-name"><%= category.name %></h4>
+            <h4 id="category-name"><%= category.name %>&nbsp;<input id="hidden" type="checkbox" name="<%= category.name %>" value="<%= category.id %>" /></h4>
           </div>
         <% end %>
       </div>
@@ -47,7 +44,7 @@
         <% @categories4.each do |category|  %>
           <div class="large-5 small-6 columns" id="category-panel">
             <a href="/products?category=<%= category.name %>" class="category-image"><img src="<%= category.img_filepath %>"></a>
-            <h4 id="category-name"><%= category.name %></h4>
+            <h4 id="category-name"><%= category.name %>&nbsp;<input id="hidden" type="checkbox" name="<%= category.name %>" value="<%= category.id %>" /></h4>
           </div>
         <% end %>
       </div>
@@ -58,7 +55,7 @@
         <% @categories5.each do |category|  %>
           <div class="large-5 small-6 columns" id="category-panel">
             <a href="/products?category=<%= category.name %>" class="category-image"><img src="<%= category.img_filepath %>"></a>
-            <h4 id="category-name"><%= category.name %></h4>
+            <h4 id="category-name"><%= category.name %>&nbsp;<input id="hidden" type="checkbox" name="<%= category.name %>" value="<%= category.id %>" /></h4>
           </div>
         <% end %>
       </div>
@@ -69,12 +66,12 @@
         <% @categories6.each do |category|  %>
           <div class="large-5 small-6 columns" id="category-panel">
             <a href="/products?category=<%= category.name %>" class="category-image"><img src="<%= category.img_filepath %>"></a>
-            <h4 id="category-name"><%= category.name %></h4>
+            <h4 id="category-name"><%= category.name %>&nbsp;<input id="hidden" type="checkbox" name="<%= category.name %>" value="<%= category.id %>" /></h4>
           </div>
         <% end %>
       </div>
     </li>
 </ul>
-<button type="submit">Submit here</button>
+<button id="show-me" type="submit">Show me some gifts!</button>
 </form>
 
