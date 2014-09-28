@@ -17,7 +17,8 @@ img {
 
 .product-listview {
   margin-bottom: 10px;
-  border-radius: 8px;
+  box-shadow: 10px 10px 5px #888888;
+  background-color: white;
 }
 
 #fave-product-name {
@@ -29,11 +30,13 @@ img {
   color: #4AC431;
 }
 
+
 #get_button {
   text-align: center;
   vertical-align: center;
   font-weight: bold;
   margin-left: 10px;
+  border-radius: 8px;
 }
 
 .buttoncontainer {
@@ -139,7 +142,6 @@ img {
 
 #username-display {
 display: inline-block;
-
 }
 
 .profile-info {
@@ -213,12 +215,58 @@ display: inline-block;
 .product-panel {
   display: inline-block;
   width: 220px;
-  min-height: 100%;
+  height: 100%;
   /*height: 430px;*/
   border-radius: 8px;
   box-shadow: 3px 3px 3px #888888;
   margin: 10px;
   background-color: white;
+}
+
+.poof {
+  -moz-box-shadow:inset 1px 0px 0px 0px #bee2f9;
+  -webkit-box-shadow:inset 1px 0px 0px 0px #bee2f9;
+  box-shadow:inset 1px 0px 0px 0px #bee2f9;
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #63b8ee), color-stop(1, #377bba) );
+  background:-moz-linear-gradient( center top, #63b8ee 5%, #377bba 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#63b8ee', endColorstr='#377bba');
+  background-color:#63b8ee;
+  -webkit-border-top-left-radius:33px;
+  -moz-border-radius-topleft:33px;
+  border-top-left-radius:33px;
+  -webkit-border-top-right-radius:33px;
+  -moz-border-radius-topright:33px;
+  border-top-right-radius:33px;
+  -webkit-border-bottom-right-radius:33px;
+  -moz-border-radius-bottomright:33px;
+  border-bottom-right-radius:33px;
+  -webkit-border-bottom-left-radius:0px;
+  -moz-border-radius-bottomleft:0px;
+  border-bottom-left-radius:0px;
+  text-indent:-9.17px;
+  border:1px solid #3866a3;
+  display:inline-block;
+  color:white;
+  font-family:Comic Sans MS;
+  font-size:22px;
+  font-weight:bold;
+  font-style:normal;
+  height:75px;
+  line-height:75px;
+  width:131px;
+  text-decoration:none;
+  text-align:center;
+  text-shadow:1px 1px 4px #7cacde;
+}
+.poof:hover {
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #377bba), color-stop(1, #63b8ee) );
+  background:-moz-linear-gradient( center top, #377bba 5%, #63b8ee 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#377bba', endColorstr='#63b8ee');
+  background-color:#377bba;
+}
+.poof:active {
+  position:relative;
+  top:1px; 
 }
 
 #favorite-button {
@@ -330,11 +378,11 @@ display: inline-block;
   border-radius: 50%;
 }
 
-#delete-button {
-  border-radius: 8px;
-}
-
 .filter_bar {
   width: 200px;
 }
+
+
+
+
 
