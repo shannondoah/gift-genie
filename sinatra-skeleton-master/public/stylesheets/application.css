@@ -33,10 +33,12 @@ img {
 #get_button {
   text-align: center;
   vertical-align: center;
-  width: 80px;
   font-weight: bold;
-  border:2px solid blue;
   margin-left: 10px;
+}
+
+.buttoncontainer {
+  text-align: center;
 }
 
 .round-button {
