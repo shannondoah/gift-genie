@@ -3,15 +3,6 @@ img {
     height:150px;
 }
 
-/*product-container {
-  display: inline-block;
-  width: 275px;
-  height: 400px;
-  padding: 15px;
-  margin-left: 10px;
-  border: 1px solid black;
-}*/
-
 #description {
   font-style: italic;
 }
@@ -168,7 +159,6 @@ display: inline-block;
   font-weight: bolder;
 }
 
-
 .category-image img{
   padding:25px;
   position: relative;
@@ -176,8 +166,10 @@ display: inline-block;
 }
 
 #category-panel {
+  float: left;
   margin: 10px;
   width: 225px;
+  height: 225px;
   border: 2px solid;
   border-radius: 25px;
   box-shadow: 10px 10px 5px #888888;
