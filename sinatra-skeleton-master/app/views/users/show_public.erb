@@ -17,6 +17,7 @@
 </select>
 </div>
 
+
 <div class="product_info">
   <% @favourites.each do |fave|%>
     <% product = Product.find(fave.product_id) %>
@@ -27,8 +28,18 @@
           <td ><p><%= product.name %></p>
           <p id="description"><%= product.description %></p>
           <h3>$<%= product.price %></h3></td>
-          <td class="buttoncontainer"><button id="get_button">I'm on it!</button></td>
+          <td class="buttoncontainer"><button id="get_button" onclick="this.disabled = 'disabled';">I'm on it!</button></td>
           </table>
       </div>
   <% end %>
 </div>
+
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#get_button').on('click', function(){
+      $(this).html("Got it!")
+  });
+  }
+  }
+</script>
