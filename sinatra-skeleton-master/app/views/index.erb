@@ -12,8 +12,8 @@
           <div class="large-5 small-6 columns" id="category-panel">
             <a class="category-image"><img src="<%= category.img_filepath %>"></a>
             <br>
-            <input type="checkbox" name="<%= category.name %>" value="<%= category.id %>"><h4 id="category-name"><%= category.name %></h4>
-            </input>
+            <input type="checkbox" name="<%= category.name %>" value="<%= category.id %>">
+            <h4 id="category-name"><%= category.name %></h4>
           </div>
         <% end %>
       </div>
@@ -25,6 +25,7 @@
           <div class="large-5 small-6 columns" id="category-panel">
             <a href="/products?category=<%= category.name %>" class="category-image"><img src="<%= category.img_filepath %>"></a>
             <br>
+            <input type="checkbox" name="<%= category.name %>" value="<%= category.id %>">
             <h4 id="category-name"><%= category.name %></h4>
           </div>
         <% end %>

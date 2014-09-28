@@ -235,14 +235,15 @@ end
 
 post '/products/results' do
 
+  @categories = []
   params.values.each do |id|
-    @category = Category.find(id)
+    @categories << Category.find(id)
   end
 
   @products = []
   Product.all.each do |product|
     product.categories.each do |cat|
-      if @category == cat
+      if @categories.include?(cat)
         @products << product
       end
     end
