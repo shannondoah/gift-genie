@@ -13,7 +13,7 @@
   <img src="<%= @user.avatar %>" id="profile-pic"/>
 </div>
 
-<h2><%= @user.email %>'s WishList</h2>
+<h2>My WishList</h2>
 <h4><a href="/users/<%= @user.id%>/edit">Edit my profile</a></h4>
 <p>
 <a href="/logout">Logout</a>
@@ -46,14 +46,4 @@
       </div>
   <% end %>
 </div>
-
-<form method="post" enctype='multipart/form-data' action="/upload">
-<input type="file" name="profilepic">
-<input type="submit" value="Upload">
-
-
-
-
-
-
 
