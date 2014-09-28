@@ -191,3 +191,23 @@ display: inline-block;
 
 
 /*  SLIDER Styling */
+
+
+/* INVISIBLE CHECKBOX */
+  input[type=checkbox] {
+   /*  position: absolute;
+     top: -9999px;
+     left: -9999px;*/
+  }
+
+  /* Toggled State */
+
+  input[type=checkbox]:checked ~ #category-name {
+     color: blue;
+  }
+
+
+  /* Buttons */
+
+.button {
+  color: red; }
