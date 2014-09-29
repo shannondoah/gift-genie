@@ -35,15 +35,10 @@
           <td ><p><%= product.name %></p>
           <p id="description"><%= product.description %></p>
           <h3><a href="http://www.xe.com/currencyconverter/convert/?Amount=<%= product.price %>&From=CAD&To=USD" target="_blank">$<%= product.price %></a></h3></td>
-          <td><button id="get_button" onclick="this.disabled = 'disabled'; myFunction()">I'm on it!</button></td>
+          <td><button onclick="this.disabled = 'disabled'; this.innerHTML = 'Claimed!';">I'm on it!</button></td>
           </table>
       </div>
   <% end %>
 </div>
 
-<script>
-function myFunction() {
-    document.getElementById("get_button").innerHTML = "Claimed!";
-}
-</script>
 
