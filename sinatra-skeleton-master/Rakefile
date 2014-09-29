@@ -673,7 +673,7 @@ beer = Product.create(
     img_filepath: "/img/diner.jpg",
     url: "http://www.amazon.ca/Retro-Diner-Poster-Studio-voltaire/dp/B003J1YWX8/ref=sr_1_4?ie=UTF8&qid=1411945431&sr=8-4&keywords=retro+bbq"
   )
-  diner.categories.push(meat, food, design, retro)
+  dinersign.categories.push(meat, food, design, retro)
 
   pubsign = Product.create(
     name: 'King of the BBQ Pub Sign', 
