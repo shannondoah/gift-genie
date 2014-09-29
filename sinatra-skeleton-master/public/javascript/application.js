@@ -1,8 +1,20 @@
 $(document).ready(function() {
 	$('#twitter-button').click(function(event) {
    
-  	});
+	});
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  $(document).on('click', '#category-panel', function(e) {
+    $(this).toggleClass('button');
+    if ($(this).find('input').is(':checked') == true) { 
+      $(this).find('input').prop('checked', false) 
+    }
+    else {
+      $(this).find('input').prop('checked', true)
+    };
+
+
+    e.preventDefault();
+  
+  });
 });
 

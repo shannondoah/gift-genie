@@ -9,7 +9,7 @@
           <div class="large-5 small-6 columns" id="category-panel">
             <a class="category-image"><img src="<%= category.img_filepath %>"></a>
             <label for="<%= category.name %>">
-            <h4 id="category-name"><%= category.name %>&nbsp;<input id="<%= category.name %>" type="checkbox" name="<%= category.name %>" value="<%= category.id %>" onclick="myFunction"/></h4>
+            <h4 id="category-name"><%= category.name %>&nbsp;<input id="<%= category.name %>" type="checkbox" style="display:none" name="<%= category.name %>" value="<%= category.id %>"/></h4>
             </label>
           </div>
           
@@ -24,7 +24,7 @@
           <div class="large-5 small-6 columns" id="category-panel">
             <a href="/products?category=<%= category.name %>" class="category-image"><img src="<%= category.img_filepath %>"></a>
             <label for="<%= category.name %>">
-            <h4 id="category-name"><%= category.name %>&nbsp;<input id="hidden" type="checkbox" name="<%= category.name %>" value="<%= category.id %>" /></h4>
+            <h4 id="category-name"><%= category.name %>&nbsp;<input id="hidden" type="checkbox" style="display:none" name="<%= category.name %>" value="<%= category.id %>" /></h4>
             </label>
           </div>
         <% end %>
@@ -37,7 +37,7 @@
           <div class="large-5 small-6 columns" id="category-panel">
             <a href="/products?category=<%= category.name %>" class="category-image"><img src="<%= category.img_filepath %>"></a>
             <label for="<%= category.name %>">
-            <h4 id="category-name"><%= category.name %>&nbsp;<input id="hidden" type="checkbox" name="<%= category.name %>" value="<%= category.id %>" /></h4>
+            <h4 id="category-name"><%= category.name %>&nbsp;<input id="hidden" type="checkbox" style="display:none" name="<%= category.name %>" value="<%= category.id %>" /></h4>
             </label>
           </div>
         <% end %>
@@ -50,7 +50,7 @@
           <div class="large-5 small-6 columns" id="category-panel">
             <a href="/products?category=<%= category.name %>" class="category-image"><img src="<%= category.img_filepath %>"></a>
             <label for="<%= category.name %>">
-            <h4 id="category-name"><%= category.name %>&nbsp;<input id="hidden" type="checkbox" name="<%= category.name %>" value="<%= category.id %>" /></h4>
+            <h4 id="category-name"><%= category.name %>&nbsp;<input id="hidden" type="checkbox" style="display:none" name="<%= category.name %>" value="<%= category.id %>" /></h4>
             </label>
           </div>
         <% end %>
@@ -63,7 +63,7 @@
           <div class="large-5 small-6 columns" id="category-panel">
             <a href="/products?category=<%= category.name %>" class="category-image"><img src="<%= category.img_filepath %>"></a>
             <label for="<%= category.name %>">
-            <h4 id="category-name"><%= category.name %>&nbsp;<input id="hidden" type="checkbox" name="<%= category.name %>" value="<%= category.id %>" /></h4>
+            <h4 id="category-name"><%= category.name %>&nbsp;<input id="hidden" type="checkbox" style="display:none" name="<%= category.name %>" value="<%= category.id %>" /></h4>
             </label>
           </div>
         <% end %>
@@ -76,13 +76,13 @@
           <div class="large-5 small-6 columns" id="category-panel">
             <a href="/products?category=<%= category.name %>" class="category-image"><img src="<%= category.img_filepath %>"></a>
             <label for="<%= category.name %>">
-            <h4 id="category-name"><%= category.name %>&nbsp;<input id="hidden" type="checkbox" name="<%= category.name %>" value="<%= category.id %>" /></h4>
+            <h4 id="category-name"><%= category.name %>&nbsp;<input id="hidden" type="checkbox" style="display:none" name="<%= category.name %>" value="<%= category.id %>" /></h4>
             </label>
           </div>
         <% end %>
       </div>
     </li>
 </ul>
+
 <button id="show-me" type="submit">Show me some gifts!</button>
 </form>
-
