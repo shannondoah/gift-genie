@@ -83,7 +83,7 @@ wine = Category.create(name: "Pre-gamer", img_filepath: "/cat_img/wine.png")
   gopro = Product.create(
     name: 'GoPro', 
     description: 'HERO3+: Black Edition. Super View video mode captures the world"s most immersive wide angle perspective',
-    price: 399.00,
+    price: "399.00",
     img_filepath: "/img/gopro.jpeg",
     url: "http://www.amazon.com/GoPro-CHDHX-302-HERO3-Black-Edition/dp/B00F3F0GLU/ref=zg_bs_electronics_14"
   )
@@ -101,7 +101,7 @@ wine = Category.create(name: "Pre-gamer", img_filepath: "/cat_img/wine.png")
   roku3 = Product.create(
     name: 'Roku 3', 
     description: 'Faster and more powerful. With up to 1080p HD video* and extended-range, dual-band wireless performance for increased speed',
-    price: 94.50,
+    price: "94.50",
     img_filepath: "/img/roku3.jpeg",
     url: "http://www.amazon.com/Roku-3-Streaming-Media-Player/dp/B00BGGDVOO/ref=zg_bs_electronics_10"
   )
@@ -128,7 +128,7 @@ wine = Category.create(name: "Pre-gamer", img_filepath: "/cat_img/wine.png")
   jordan = Product.create(
     name: 'Nike Mens Air Jordan V 5 Retro Basketball Shoe', 
     description: 'Fresh! May make you jump higher. Made in China.',
-    price: 500.00,
+    price: "500.00",
     img_filepath: "/img/jordan.jpeg",
     url: "http://www.amazon.com/Nike-Mens-Jordan-Retro-Basketball/dp/B004ZNMIE4"
   )
@@ -173,7 +173,7 @@ wine = Category.create(name: "Pre-gamer", img_filepath: "/cat_img/wine.png")
   dogtoy = Product.create(
     name: 'Squeaking Dog Toy', 
     description: 'Marvin the moose is soft and cuddly, yet tough and durable. Squeaks to promote play!',
-    price: 21.30,
+    price: "21.30",
     img_filepath: "/img/dogtoy.jpeg",
     url: "http://www.amazon.com/KONG-Cozie-Marvin-Moose-Medium/dp/B005AP3B8S/ref=sr_1_1?ie=UTF8&qid=1411719192&sr=8-1&keywords=marvin+the+moose+dog+toy"
   )
@@ -182,7 +182,7 @@ wine = Category.create(name: "Pre-gamer", img_filepath: "/cat_img/wine.png")
   pots = Product.create(
     name: 'Stainless 13-Piece Cookware Set', 
     description: '1-1/2 and 2-1/2 qt. saucepans with cover, 3 qt. sauté pan with cover, 4 qt. dutch oven with cover, pasta insert, and 8 and 10 inch skillets',
-    price: 199.00,
+    price: "199.00",
     img_filepath: "/img/pots.jpeg",
     url: "http://www.amazon.com/gp/product/B002WPG0QY/ref=s9_hps_bw_g79_i4?pf_rd_m=ATVPDKIKX0DER&pf_rd_s=merchandised-search-6&pf_rd_r=1VSWM81P0QVSF48DC31S&pf_rd_t=101&pf_rd_p=1818859622&pf_rd_i=289814"
   )
@@ -317,7 +317,7 @@ wine = Category.create(name: "Pre-gamer", img_filepath: "/cat_img/wine.png")
   downton = Product.create(
     name: 'Downton Abbey Seasons 1 - 4', 
     description: 'This is the epic tale of the Crawley family and their servants.',
-    price: 25.71,
+    price: 35.75,
     img_filepath: "/img/downton.jpeg",
     url: "http://www.amazon.ca/Masterpiece-Downton-Abbey-Seasons-Blu-ray/dp/B00KX45CJW/ref=sr_1_5?s=dvd&ie=UTF8&qid=1411844582&sr=1-5&keywords=downton+abbey"
   )
@@ -326,7 +326,7 @@ wine = Category.create(name: "Pre-gamer", img_filepath: "/cat_img/wine.png")
   cookbook = Product.create(
     name: 'The Oh She Glows Cookbook', 
     description: 'Vegan recipes to glow from the inside out!',
-    price: 25.71,
+    price: 25.99,
     img_filepath: "/img/cookbook.jpeg",
     url: "http://www.amazon.ca/The-Oh-She-Glows-Cookbook/dp/0143187228/ref=zg_bs_books_home_3?pf_rd_p=1291077342&pf_rd_s=center-3&pf_rd_t=2101&pf_rd_i=home&pf_rd_m=A3DWYIK6Y9EEQB&pf_rd_r=1ZV7KFMQKW9N1WRDV5D5"
   )
@@ -335,7 +335,7 @@ wine = Category.create(name: "Pre-gamer", img_filepath: "/cat_img/wine.png")
   smashbros = Product.create(
     name: 'Super Smash Bros for Nintendo 3DS', 
     description: 'Battle it out as Nintendo’s greatest heroes—right in the palm of your hand! ',
-    price: 25.71,
+    price: "45.20",
     img_filepath: "/img/smashbros.jpeg",
     url: "http://www.amazon.ca/Super-Smash-Bros-Nintendo-3DS/dp/B00JATU2U0/ref=zg_bs_videogames_home_1?pf_rd_p=1291076482&pf_rd_s=center-5&pf_rd_t=2101&pf_rd_i=home&pf_rd_m=A3DWYIK6Y9EEQB&pf_rd_r=1ZV7KFMQKW9N1WRDV5D5"
   )
@@ -344,7 +344,7 @@ wine = Category.create(name: "Pre-gamer", img_filepath: "/cat_img/wine.png")
   destiny = Product.create(
     name: 'Destiny', 
     description: 'An incredible story set within a newly-imagined, always-connected universe filled with action and adventure. ',
-    price: 69.00,
+    price: "69.00",
     img_filepath: "/img/destiny.jpeg",
     url: "http://www.amazon.ca/dp/B00BGA9Y3W?pf_rd_p=1930454742&pf_rd_s=merchandised-search-4&pf_rd_t=101&pf_rd_i=3198031&pf_rd_m=A3DWYIK6Y9EEQB&pf_rd_r=0FM9BMC9HD1EXBQ0W5HQ"
   )
@@ -362,7 +362,7 @@ wine = Category.create(name: "Pre-gamer", img_filepath: "/cat_img/wine.png")
   callofduty = Product.create(
     name: 'Call of Duty: Advanced Warfare', 
     description: 'Pre-order Call of Duty®: Advanced Warfare and get access to the Advanced Arsenal, featuring a custom bullet brass themed exoskeleton and the EM1 Quantum',
-    price: 69.00,
+    price: "69.00",
     img_filepath: "/img/callofduty.jpeg",
     url: "http://www.amazon.ca/Call-Duty-Advanced-Warfare-Windows/dp/B00K628K2W/ref=sr_1_1_title_4?s=videogames&ie=UTF8&qid=1411847990&sr=1-1&keywords=call+of+duty"
   )
@@ -393,7 +393,7 @@ wine = Category.create(name: "Pre-gamer", img_filepath: "/cat_img/wine.png")
     img_filepath: "/img/turntable.jpeg",
     url: "http://www.amazon.ca/Stanton-STR8150-Torque-Direct-Turntable/dp/B0000C5NYD/ref=sr_1_1?s=electronics&ie=UTF8&qid=1411849051&sr=1-1&keywords=turn+tables"
   )
-  turntable.categories.push(music, party)
+  turntable.categories.push(music, party, instrument, technology)
 
   samsungtv = Product.create(
     name: 'Samsung 55-Inch HDTV', 
@@ -474,7 +474,7 @@ wine = Category.create(name: "Pre-gamer", img_filepath: "/cat_img/wine.png")
     img_filepath: "/img/guitar.jpeg",
     url: "http://www.amazon.ca/Jasmine-S35-Acoustic-Guitar-Natural/dp/B0002F58TG/ref=sr_1_6?s=musical-instruments&ie=UTF8&qid=1411851639&sr=1-6"
   )
-  guitar.categories.push(music, instrument)
+  guitar.categories.push(music, instrument, technology)
 
    nursery = Product.create(
     name: 'Nursery Organizer', 
@@ -606,7 +606,7 @@ beer = Product.create(
   paints = Product.create(
     name: 'Folk Art PROMOFAI Acrylic Paint', 
     description: 'Collection of best selling colors, 2-ounce',
-    price: 28.50,
+    price: "28.50",
     img_filepath: "/img/paints.jpeg",
     url: "http://www.amazon.ca/gp/product/B00BA083BM/ref=s9_hps_bw_g198_i3?pf_rd_m=A3DWYIK6Y9EEQB&pf_rd_s=merchandised-search-8&pf_rd_r=0H7XADWCW035MXWDRQQ7&pf_rd_t=101&pf_rd_p=1578251922&pf_rd_i=6205505011"
   )
@@ -637,7 +637,7 @@ beer = Product.create(
     img_filepath: "/img/disco.jpeg",
     url: "http://www.amazon.ca/Coco-Performing-Equipment-Changing-Lighting/dp/B00ES4GD3C/ref=sr_1_3?ie=UTF8&qid=1411854814&sr=8-3&keywords=disco+ball"
   )
-  disco.categories.push(party, music)
+  disco.categories.push(party, music, technology)
 
    helmet = Product.create(
     name: 'Stealth Helmet', 
@@ -666,6 +666,94 @@ beer = Product.create(
   )
   wheelcover.categories.push(car)
 
+  dinersign = Product.create(
+    name: 'Retro Diner BBQ Poster Print', 
+    description: 'Hang in your kitchen to give the space a retro flare. Mmm, BBQ.',
+    price: "8.75",
+    img_filepath: "/img/diner.jpg",
+    url: "http://www.amazon.ca/Retro-Diner-Poster-Studio-voltaire/dp/B003J1YWX8/ref=sr_1_4?ie=UTF8&qid=1411945431&sr=8-4&keywords=retro+bbq"
+  )
+  dinersign.categories.push(meat, food, design, retro)
+
+  pubsign = Product.create(
+    name: 'King of the BBQ Pub Sign', 
+    description: 'Warm up your patio with this hearty reminder of good food and good times.',
+    price: "12.95",
+    img_filepath: "/img/pub.jpg",
+    url: "http://www.amazon.ca/MUG4180-BRAND-FUNNY-RETRO-QUALITY/dp/B00F42KJ1O/ref=sr_1_11?ie=UTF8&qid=1411945431&sr=8-11&keywords=retro+bbq"
+  )
+
+  pubsign.categories.push(food, design, retro)
+
+  meatbook = Product.create(
+    name: 'MEAT: Everything You Need to Know', 
+    description: "This hardcover gem is an elegant addition to any meat-lover's collection.",
+    price: "30.05",
+    img_filepath: "/img/meatbook.jpg",
+    url: "http://www.amazon.ca/MEAT-Everything-You-Need-Know/dp/1476725993/ref=sr_1_1?ie=UTF8&qid=1411945478&sr=8-1&keywords=meat"
+  )
+
+  meatbook.categories.push(meat, food, design, books)
+
+  bbq = Product.create(
+    name: 'Weber One Touch Gold Kettle Grill', 
+    description: "This beauty of a grill is a staple for summer patio parties.",
+    price: "169.00",
+    img_filepath: "/img/bbq.jpg",
+    url: "http://www.amazon.ca/Weber-1351001-One-Touch-Kettle-22-5-Inch/dp/B0098HR0WM/ref=sr_1_18?ie=UTF8&qid=1411945517&sr=8-18&keywords=bbq"
+  )
+
+  bbq.categories.push(meat, food, design, retro)
+
+  bacon = Product.create(
+    name: 'Cast Iron Pig Bacon Grill Press', 
+    description: "Even the best cut bacon can curl, making it difficult to cook evenly. This press will keep it flat.",
+    price: "12.90",
+    img_filepath: "/img/bacon.jpg",
+    url: "http://www.amazon.ca/Norpro-Cast-Bacon-Grill-Press/dp/B0002IBQWG/ref=sr_1_8?s=kitchen&ie=UTF8&qid=1411945553&sr=1-8&keywords=bacon"
+  )
+
+  bacon.categories.push(meat, food, design)
+
+  lightchange = Product.create(
+    name: 'Music Controller for Color Changing Lights', 
+    description: "This music controller allows you to wireless control your color changing (RGB) LEDs via infrared remote control.",
+    price: "40.00",
+    img_filepath: "/img/lightchange.jpg",
+    url: "http://www.amazon.ca/Norpro-Cast-Bacon-Grill-Press/dp/B0002IBQWG/ref=sr_1_8?s=kitchen&ie=UTF8&qid=1411945553&sr=1-8&keywords=bacon"
+  )
+
+  lightchange.categories.push(technology, music, party)
+
+  bikeseat = Product.create(
+    name: 'CoPilot Bicycle Child Seat', 
+    description: "Ride in style with your little one in tow!",
+    price: "186.93",
+    img_filepath: "/img/bikeseat.jpg",
+    url: "http://www.amazon.ca/CoPilot-Taxi-Bicycle-Child-Seat/dp/B000G22QHW/ref=sr_1_5?ie=UTF8&qid=1411947373&sr=8-5&keywords=bicycle+baby+carrier"
+  )
+
+  bikeseat.categories.push(baby, bicycle)
+
+  trike = Product.create(
+    name: 'Classic Red Tricycle', 
+    description: "The kid who rides this will have no regrets in life, ever.",
+    price: "126.38",
+    img_filepath: "/img/trike.jpg",
+    url: "http://www.amazon.ca/Radio-Flyer-Classic-Tricycle-Handle/dp/B002SW4856/ref=sr_1_1?ie=UTF8&qid=1411947435&sr=8-1&keywords=tricycles"
+  )
+
+  trike.categories.push(baby, bicycle)
+
+  biketrailer = Product.create(
+    name: 'Double Baby Bike Trailer', 
+    description: "All the joy of togetherness with none of the pleasure of biking.",
+    price: "169.99",
+    img_filepath: "/img/biketrailer.jpg",
+    url: "http://www.amazon.ca/Aosom-Double-Trailer-Jogger-Stroller/dp/B00552W2L8/ref=sr_1_cc_1?s=aps&ie=UTF8&qid=1411947983&sr=1-1-catcorr&keywords=baby+bike+trailer"
+  )
+
+  biketrailer.categories.push(baby, bicycle)
 
 
 
@@ -674,50 +762,75 @@ beer = Product.create(
 
 # ===== Favourite seed data =====
 
-  user1 = User.find(1)
-  user1.favourites.create(product_id: 3, user_id: 1)
-  user1.favourites.create(product_id: 8, user_id: 1)
+  user1 = User.find(1) #Dorothy black - total hipster
+  user1.favourites.create(product_id: 23, user_id: 1)
+  user1.favourites.create(product_id: 10, user_id: 1)
   user1.favourites.create(product_id: 6, user_id: 1)
-  user1.favourites.create(product_id: 12, user_id: 1) 
+  user1.favourites.create(product_id: 18, user_id: 1) 
+  user1.favourites.create(product_id: 30, user_id: 1) 
 
-  user2 = User.find(2)
+  user2 = User.find(2) #julie berry - expensive tastes
   user2.favourites.create(product_id: 4, user_id: 2)
-  user2.favourites.create(product_id: 5, user_id: 2)
+  user2.favourites.create(product_id: 40, user_id: 2)
   user2.favourites.create(product_id: 6, user_id: 2)
-  user2.favourites.create(product_id: 8, user_id: 2)
+  user2.favourites.create(product_id: 45, user_id: 2)
+  user2.favourites.create(product_id: 5, user_id: 2)
+  
 
-  user3 = User.find(3)
+  user3 = User.find(3) #Teresa Smith - single with dogs
+  user3.favourites.create(product_id: 2, user_id: 3) 
+  user3.favourites.create(product_id: 11, user_id: 3)  
+  user3.favourites.create(product_id: 13, user_id: 3)
   user3.favourites.create(product_id: 14, user_id: 3) 
-  user3.favourites.create(product_id: 11, user_id: 3) 
-  user3.favourites.create(product_id: 10, user_id: 3) 
-  user3.favourites.create(product_id: 7, user_id: 3)
+  user3.favourites.create(product_id: 57, user_id: 3)
 
-  user4 = User.find(4)
-  user4.favourites.create(product_id: 1, user_id: 4)
-  user4.favourites.create(product_id: 2, user_id: 4)
-  user4.favourites.create(product_id: 16, user_id: 4) 
+  user4 = User.find(4) #phyllis johnson - Wellness expert
+  user4.favourites.create(product_id: 62, user_id: 4)
+  user4.favourites.create(product_id: 30, user_id: 4) 
+  user4.favourites.create(product_id: 22, user_id: 4) 
+  user4.favourites.create(product_id: 61, user_id: 4)
+  user4.favourites.create(product_id: 48, user_id: 4)
 
-  user5 = User.find(5)
-  user5.favourites.create(product_id: 14, user_id: 5) 
-  user5.favourites.create(product_id: 5, user_id: 5)
-  user5.favourites.create(product_id: 7, user_id: 5)
+  user5 = User.find(5) # Victor Bailey - doesn't have time for holidays
+  user5.favourites.create(product_id: 52, user_id: 5) 
+  user5.favourites.create(product_id: 60, user_id: 5)
   user5.favourites.create(product_id: 2, user_id: 5)
-  user5.favourites.create(product_id: 3, user_id: 5)
+  user5.favourites.create(product_id: 4, user_id: 5)
+  user5.favourites.create(product_id: 6, user_id: 5)
 
-  user6 = User.find(6)
-  user6.favourites.create(product_id: 13, user_id: 6) 
+  user6 = User.find(6) #kim stevens - wholesome gamer chick
+  user6.favourites.create(product_id: 31, user_id: 6) 
+  user6.favourites.create(product_id: 35, user_id: 6) 
+  user6.favourites.create(product_id: 54, user_id: 6) 
+  user6.favourites.create(product_id: 21, user_id: 6) 
 
-  user7 = User.find(7)
-  user7.favourites.create(product_id: 8, user_id: 7)
-  user7.favourites.create(product_id: 3, user_id: 7)
-  user7.favourites.create(product_id: 4, user_id: 7)
-  user7.favourites.create(product_id: 11, user_id: 7) 
+  user7 = User.find(7) #brandon dunn - bro
+  user7.favourites.create(product_id: 38, user_id: 7)
+  user7.favourites.create(product_id: 41, user_id: 7) 
+  user7.favourites.create(product_id: 7, user_id: 7)
+  user7.favourites.create(product_id: 5, user_id: 7)
+  
 
-  user8 = User.find(8)
-  user8.favourites.create(product_id: 10, user_id: 8) 
+  user8 = User.find(8) # cheryl stone - teen mom
+  user8.favourites.create(product_id: 49, user_id: 8) 
+  user8.favourites.create(product_id: 47, user_id: 8)
   user8.favourites.create(product_id: 9, user_id: 8)
-  user8.favourites.create(product_id: 2, user_id: 8)
+  user8.favourites.create(product_id: 1, user_id: 8)
+  user8.favourites.create(product_id: 16, user_id: 8)
 
+  user9 = User.find(9) # shaun flores - nice guy looking for love
+  user9.favourites.create(product_id: 14, user_id: 9)
+  user9.favourites.create(product_id: 50, user_id: 9)
+  user9.favourites.create(product_id: 57, user_id: 9)
+  user9.favourites.create(product_id: 53, user_id: 9)
+  user9.favourites.create(product_id: 17, user_id: 9)
+
+  user10 = User.find(10) #kim rodriguez - way too into herself
+  user10.favourites.create(product_id: 43, user_id: 10)
+  user10.favourites.create(product_id: 45, user_id: 10)
+  user10.favourites.create(product_id: 40, user_id: 10)
+  user10.favourites.create(product_id: 46, user_id: 10)
+  user10.favourites.create(product_id: 39, user_id: 10)
 
 
 
