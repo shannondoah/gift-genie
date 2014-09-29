@@ -3,7 +3,7 @@ $(document).ready(function() {
    
 	});
 
-  $(document).on('click', '#category-panel', function(e) {
+  $(document).on('click', '#category-panel', function(element) {
     $(this).toggleClass('button');
     if ($(this).find('input').is(':checked') == true) { 
       $(this).find('input').prop('checked', false) 
