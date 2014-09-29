@@ -12,9 +12,11 @@ $(document).ready(function() {
       $(this).find('input').prop('checked', true)
     };
 
-
     e.preventDefault();
-  
   });
+
+  $('#poof-image').click(function(e){    
+    $(this).fadeOut('slow');
+  }); 
 });
 
