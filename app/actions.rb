@@ -287,7 +287,7 @@ post '/products/results' do
   @products = Product.joins(:categories)
     .select("products.*, COUNT(categories.id) AS count")
     .where(categories: { id: params.values })
-    .group(:product_id)
+    .group("product.id") 
     .order('count DESC')
   login_check
   erb :'products/index'
